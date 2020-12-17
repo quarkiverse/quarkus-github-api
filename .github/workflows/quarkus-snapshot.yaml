@@ -45,7 +45,24 @@ jobs:
           ref: master
           path: ecosystem-ci
 
+      - name: Get Date
+        id: get-date
+        run: |
+          echo "::set-output name=date::$(/bin/date -u "+%Y-%m")"
+        shell: bash
+      - name: Cache Maven Repository
+        id: cache-maven
+        uses: actions/cache@v2
+        with:
+          path: ~/.m2/repository
+          # refresh cache every month to avoid unlimited growth
+          key: maven-repo-${{ steps.get-date.outputs.date }}
+
       - name: Setup and Run Tests
         run: ./ecosystem-ci/setup-and-test
         env:
           ECOSYSTEM_CI_TOKEN: ${{ secrets.ECOSYSTEM_CI_TOKEN }}
+
+      - name: Delete Quarkus and Quarkiverse Artifacts From Cache
+        shell: bash
+        run: rm -rf ~/.m2/repository/io/quarkus && rm -rf ~/.m2/repository/io/quarkiverse
