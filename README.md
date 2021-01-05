@@ -18,6 +18,13 @@ GitHub gitHub = GitHubBuilder.fromEnvironment()
     .build();
 ```
 
+## License
+
+While this extension itself is licensed under the Apache License version 2.0,
+please note that the underlying library is licensed under the MIT License.
+
+Please refer to the [Hub4j GitHub API repository](https://github.com/hub4j/github-api) for additional license and contributors information.
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
