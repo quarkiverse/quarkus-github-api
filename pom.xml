@@ -8,9 +8,9 @@
     </parent>
 
     <groupId>io.quarkiverse.githubapi</groupId>
-    <artifactId>quarkiverse-github-api-parent</artifactId>
+    <artifactId>quarkus-github-api-parent</artifactId>
     <version>0.0.3-SNAPSHOT</version>
-    <name>Quarkiverse - GitHub API - Parent</name>
+    <name>Quarkus - GitHub API - Parent</name>
 
     <packaging>pom</packaging>
 
@@ -101,14 +101,14 @@
     </developers>
 
     <scm>
-        <url>https://github.com/quarkiverse/quarkiverse-github-api</url>
-        <connection>scm:git:git@github.com:quarkiverse/quarkiverse-github-api.git</connection>
-        <developerConnection>scm:git:git@github.com:quarkiverse/quarkiverse-github-api.git</developerConnection>
+        <url>https://github.com/quarkiverse/quarkus-github-api</url>
+        <connection>scm:git:git@github.com:quarkiverse/quarkus-github-api.git</connection>
+        <developerConnection>scm:git:git@github.com:quarkiverse/quarkus-github-api.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
     <issueManagement>
         <system>GitHub</system>
-        <url>https://github.com/quarkiverse/quarkiverse-github-api/issues/</url>
+        <url>https://github.com/quarkiverse/quarkus-github-api/issues/</url>
     </issueManagement>
 </project>
