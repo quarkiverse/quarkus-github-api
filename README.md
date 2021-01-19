@@ -1,11 +1,23 @@
-# Quarkiverse GitHub API
+# Quarkus GitHub API
+
+[![Version](https://img.shields.io/maven-central/v/io.quarkiverse.githubapi/quarkus-github-api?logo=apache-maven&style=for-the-badge)](https://search.maven.org/artifact/io.quarkiverse.githubapi/quarkus-github-api)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=for-the-badge)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 This is the Quarkus extension for [Hub4j GitHub API](https://github.com/hub4j/github-api).
 
 The main purpose of this extension is to make it possible to build native executables with GraalVM and Mandrel.
+
+## Coordinates
+
+```xml
+<dependency>
+    <groupId>io.quarkiverse.githubapi</groupId>
+    <artifactId>quarkus-github-api</artifactId>
+    <version>LATEST</version>
+</dependency>
+```
 
 ## Native support
 

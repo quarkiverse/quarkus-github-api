@@ -3,13 +3,13 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>io.quarkiverse.githubapi</groupId>
-        <artifactId>quarkiverse-github-api-parent</artifactId>
+        <artifactId>quarkus-github-api-parent</artifactId>
         <version>0.0.3-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>quarkiverse-github-api</artifactId>
-    <name>Quarkiverse - GitHub API - Runtime</name>
+    <artifactId>quarkus-github-api</artifactId>
+    <name>Quarkus - GitHub API - Runtime</name>
 
     <dependencies>
         <dependency>
