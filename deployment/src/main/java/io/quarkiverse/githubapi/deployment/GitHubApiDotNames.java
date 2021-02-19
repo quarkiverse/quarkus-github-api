@@ -175,6 +175,7 @@ final class GitHubApiDotNames {
     private static final DotName GITHUB_REQUEST = DotName.createSimple("org.kohsuke.github.GitHubRequest");
     private static final DotName GITHUB_REQUEST_ENTRY = DotName.createSimple("org.kohsuke.github.GitHubRequest$Entry");
     private static final DotName GITHUB_RESPONSE = DotName.createSimple("org.kohsuke.github.GitHubResponse");
+    private static final DotName JSON_RATE_LIMIT = DotName.createSimple("org.kohsuke.github.JsonRateLimit");
 
     static final List<DotName> GH_SIMPLE_OBJECTS = Arrays.asList(GH_APP_INSTALLATION_GH_APP_INSTALLATION_REPOSITORY_RESULT,
             GH_APP_INSTALLATION_TOKEN, GH_APP_AUTHORIZATION_APP, GH_BLOB,
@@ -199,7 +200,7 @@ final class GitHubApiDotNames {
             GH_REPOSITORY_STATISTICS, GH_REPOSITORY_STATISTICS_CONTRIBUTOR_STATS_WEEK, GH_REPOSITORY_STATISTICS_CODE_FREQUENCY,
             GH_REPOSITORY_STATISTICS_PUNCH_CARD_ITEM, GH_STARGAZER, GH_SUBSCRIPTION, GH_TAG, GH_TAG_OBJECT, GH_THREAD_SUBJECT,
             GH_TREE, GH_TREE_ENTRY,
-            GH_VERIFICATION, GITHUB_REQUEST, GITHUB_REQUEST_ENTRY, GITHUB_RESPONSE);
+            GH_VERIFICATION, GITHUB_REQUEST, GITHUB_REQUEST_ENTRY, GITHUB_RESPONSE, JSON_RATE_LIMIT);
 
     private GitHubApiDotNames() {
     }
