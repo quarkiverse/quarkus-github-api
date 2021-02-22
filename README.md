@@ -2,7 +2,7 @@
 
 [![Version](https://img.shields.io/maven-central/v/io.quarkiverse.githubapi/quarkus-github-api?logo=apache-maven&style=for-the-badge)](https://search.maven.org/artifact/io.quarkiverse.githubapi/quarkus-github-api)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=for-the-badge)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 This is the Quarkus extension for [Hub4j GitHub API](https://github.com/hub4j/github-api).
@@ -46,12 +46,14 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://www.redhat.com/"><img src="https://avatars1.githubusercontent.com/u/1279749?v=4" width="100px;" alt=""/><br /><sub><b>Guillaume Smet</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkiverse-github-api/commits?author=gsmet" title="Code">💻</a> <a href="#maintenance-gsmet" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://www.redhat.com/"><img src="https://avatars1.githubusercontent.com/u/1279749?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Guillaume Smet</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-github-api/commits?author=gsmet" title="Code">💻</a> <a href="#maintenance-gsmet" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://twitter.com/r_svoboda"><img src="https://avatars.githubusercontent.com/u/925259?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Rostislav Svoboda</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-github-api/commits?author=rsvoboda" title="Code">💻</a></td>
   </tr>
 </table>
 
-<!-- markdownlint-enable -->
+<!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
