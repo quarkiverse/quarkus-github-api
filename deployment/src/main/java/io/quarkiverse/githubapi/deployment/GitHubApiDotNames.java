@@ -55,6 +55,7 @@ import org.kohsuke.github.GHThread;
 import org.kohsuke.github.GHTree;
 import org.kohsuke.github.GHTreeEntry;
 import org.kohsuke.github.GHVerification;
+import org.kohsuke.github.GHWorkflowRun;
 import org.kohsuke.github.GitUser;
 import org.kohsuke.github.PagedIterable;
 
@@ -176,6 +177,7 @@ final class GitHubApiDotNames {
     private static final DotName GH_TREE = DotName.createSimple(GHTree.class.getName());
     private static final DotName GH_TREE_ENTRY = DotName.createSimple(GHTreeEntry.class.getName());
     private static final DotName GH_VERIFICATION = DotName.createSimple(GHVerification.class.getName());
+    private static final DotName GH_WORKFLOW_RUN_HEAD_COMMIT = DotName.createSimple(GHWorkflowRun.HeadCommit.class.getName());
     private static final DotName GITHUB_REQUEST = DotName.createSimple("org.kohsuke.github.GitHubRequest");
     private static final DotName GITHUB_REQUEST_ENTRY = DotName.createSimple("org.kohsuke.github.GitHubRequest$Entry");
     private static final DotName GITHUB_RESPONSE = DotName.createSimple("org.kohsuke.github.GitHubResponse");
@@ -205,7 +207,8 @@ final class GitHubApiDotNames {
             GH_REPOSITORY_STATISTICS, GH_REPOSITORY_STATISTICS_CONTRIBUTOR_STATS_WEEK, GH_REPOSITORY_STATISTICS_CODE_FREQUENCY,
             GH_REPOSITORY_STATISTICS_PUNCH_CARD_ITEM, GH_STARGAZER, GH_SUBSCRIPTION, GH_TAG, GH_TAG_OBJECT, GH_THREAD_SUBJECT,
             GH_TREE, GH_TREE_ENTRY,
-            GH_VERIFICATION, GITHUB_REQUEST, GITHUB_REQUEST_ENTRY, GITHUB_RESPONSE, JSON_RATE_LIMIT);
+            GH_VERIFICATION, GH_WORKFLOW_RUN_HEAD_COMMIT,
+            GITHUB_REQUEST, GITHUB_REQUEST_ENTRY, GITHUB_RESPONSE, JSON_RATE_LIMIT);
 
     private GitHubApiDotNames() {
     }
