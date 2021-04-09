@@ -10,6 +10,7 @@
 
     <artifactId>quarkus-github-api</artifactId>
     <name>Quarkus - GitHub API - Runtime</name>
+    <description>Connect to the GitHub API</description>
 
     <dependencies>
         <dependency>
