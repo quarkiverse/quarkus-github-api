@@ -55,6 +55,7 @@ import org.kohsuke.github.GHThread;
 import org.kohsuke.github.GHTree;
 import org.kohsuke.github.GHTreeEntry;
 import org.kohsuke.github.GHVerification;
+import org.kohsuke.github.GHWorkflowJob;
 import org.kohsuke.github.GHWorkflowRun;
 import org.kohsuke.github.GitUser;
 import org.kohsuke.github.PagedIterable;
@@ -85,6 +86,7 @@ final class GitHubApiDotNames {
             .createSimple(GHAppInstallation.class.getName() + "$GHAppInstallationRepositoryResult");
     private static final DotName GH_APP_INSTALLATION_TOKEN = DotName.createSimple(GHAppInstallationToken.class.getName());
     private static final DotName GH_APP_AUTHORIZATION_APP = DotName.createSimple(GHAuthorization.class.getName() + "$App");
+    private static final DotName GH_ARTIFACTS_PAGE = DotName.createSimple("org.kohsuke.github.GHArtifactsPage");
     private static final DotName GH_BLOB = DotName.createSimple(GHBlob.class.getName());
     private static final DotName GH_BRANCH = DotName.createSimple(GHBranch.class.getName());
     private static final DotName GH_BRANCH_COMMIT = DotName.createSimple(GHBranch.Commit.class.getName());
@@ -177,14 +179,18 @@ final class GitHubApiDotNames {
     private static final DotName GH_TREE = DotName.createSimple(GHTree.class.getName());
     private static final DotName GH_TREE_ENTRY = DotName.createSimple(GHTreeEntry.class.getName());
     private static final DotName GH_VERIFICATION = DotName.createSimple(GHVerification.class.getName());
+    private static final DotName GH_WORKFLOW_JOB_STEP = DotName.createSimple(GHWorkflowJob.Step.class.getName());
+    private static final DotName GH_WORKFLOW_JOBS_PAGE = DotName.createSimple("org.kohsuke.github.GHWorkflowJobsPage");
     private static final DotName GH_WORKFLOW_RUN_HEAD_COMMIT = DotName.createSimple(GHWorkflowRun.HeadCommit.class.getName());
+    private static final DotName GH_WORKFLOW_RUNS_PAGE = DotName.createSimple("org.kohsuke.github.GHWorkflowRunsPage");
+    private static final DotName GH_WORKFLOWS_PAGE = DotName.createSimple("org.kohsuke.github.GHWorkflowsPage");
     private static final DotName GITHUB_REQUEST = DotName.createSimple("org.kohsuke.github.GitHubRequest");
     private static final DotName GITHUB_REQUEST_ENTRY = DotName.createSimple("org.kohsuke.github.GitHubRequest$Entry");
     private static final DotName GITHUB_RESPONSE = DotName.createSimple("org.kohsuke.github.GitHubResponse");
     private static final DotName JSON_RATE_LIMIT = DotName.createSimple("org.kohsuke.github.JsonRateLimit");
 
     static final List<DotName> GH_SIMPLE_OBJECTS = Arrays.asList(GH_APP_INSTALLATION_GH_APP_INSTALLATION_REPOSITORY_RESULT,
-            GH_APP_INSTALLATION_TOKEN, GH_APP_AUTHORIZATION_APP, GH_BLOB,
+            GH_APP_INSTALLATION_TOKEN, GH_APP_AUTHORIZATION_APP, GH_ARTIFACTS_PAGE, GH_BLOB,
             GH_BRANCH,
             GH_BRANCH_COMMIT, GH_BRANCH_PROTECTION, GH_BRANCH_PROTECTION_ENFORCE_ADMINS, GH_BRANCH_PROTECTION_REQUIRED_REVIEWS,
             GH_BRANCH_PROTECTION_REQUIRED_SIGNATURES, GH_BRANCH_PROTECTION_REQUIRED_STATUS_CHECKS,
@@ -206,8 +212,8 @@ final class GitHubApiDotNames {
             GH_REF_GH_OBJECT, GH_REPOSITORY_GH_REPO_PERMISSION, GH_REPOSITORY_TOPICS,
             GH_REPOSITORY_STATISTICS, GH_REPOSITORY_STATISTICS_CONTRIBUTOR_STATS_WEEK, GH_REPOSITORY_STATISTICS_CODE_FREQUENCY,
             GH_REPOSITORY_STATISTICS_PUNCH_CARD_ITEM, GH_STARGAZER, GH_SUBSCRIPTION, GH_TAG, GH_TAG_OBJECT, GH_THREAD_SUBJECT,
-            GH_TREE, GH_TREE_ENTRY,
-            GH_VERIFICATION, GH_WORKFLOW_RUN_HEAD_COMMIT,
+            GH_TREE, GH_TREE_ENTRY, GH_VERIFICATION,
+            GH_WORKFLOW_JOB_STEP, GH_WORKFLOW_JOBS_PAGE, GH_WORKFLOW_RUN_HEAD_COMMIT, GH_WORKFLOW_RUNS_PAGE, GH_WORKFLOWS_PAGE,
             GITHUB_REQUEST, GITHUB_REQUEST_ENTRY, GITHUB_RESPONSE, JSON_RATE_LIMIT);
 
     private GitHubApiDotNames() {
