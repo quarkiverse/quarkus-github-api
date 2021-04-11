@@ -13,6 +13,7 @@ import org.kohsuke.github.GHBlob;
 import org.kohsuke.github.GHBranch;
 import org.kohsuke.github.GHBranchProtection;
 import org.kohsuke.github.GHCheckRun;
+import org.kohsuke.github.GHCheckRunBuilder;
 import org.kohsuke.github.GHCheckSuite;
 import org.kohsuke.github.GHCommit;
 import org.kohsuke.github.GHCommitPointer;
@@ -101,6 +102,11 @@ final class GitHubApiDotNames {
             .createSimple(GHBranchProtection.RequiredStatusChecks.class.getName());
     private static final DotName GH_BRANCH_PROTECTION_RESTRICTIONS = DotName
             .createSimple(GHBranchProtection.Restrictions.class.getName());
+    private static final DotName GH_CHECK_RUN_BUILDER_ACTION = DotName.createSimple(GHCheckRunBuilder.Action.class.getName());
+    private static final DotName GH_CHECK_RUN_BUILDER_ANNOTATION = DotName
+            .createSimple(GHCheckRunBuilder.Annotation.class.getName());
+    private static final DotName GH_CHECK_RUN_BUILDER_IMAGE = DotName.createSimple(GHCheckRunBuilder.Image.class.getName());
+    private static final DotName GH_CHECK_RUN_BUILDER_OUTPUT = DotName.createSimple(GHCheckRunBuilder.Output.class.getName());
     private static final DotName GH_CHECK_RUN_OUTPUT = DotName.createSimple(GHCheckRun.Output.class.getName());
     private static final DotName GH_CHECK_RUNS_PAGE = DotName.createSimple("org.kohsuke.github.GHCheckRunsPage");
     private static final DotName GH_CHECK_SUITE_HEAD_COMMIT = DotName.createSimple(GHCheckSuite.HeadCommit.class.getName());
@@ -194,7 +200,10 @@ final class GitHubApiDotNames {
             GH_BRANCH,
             GH_BRANCH_COMMIT, GH_BRANCH_PROTECTION, GH_BRANCH_PROTECTION_ENFORCE_ADMINS, GH_BRANCH_PROTECTION_REQUIRED_REVIEWS,
             GH_BRANCH_PROTECTION_REQUIRED_SIGNATURES, GH_BRANCH_PROTECTION_REQUIRED_STATUS_CHECKS,
-            GH_BRANCH_PROTECTION_RESTRICTIONS, GH_CHECK_RUN_OUTPUT, GH_CHECK_RUNS_PAGE, GH_CHECK_SUITE_HEAD_COMMIT,
+            GH_BRANCH_PROTECTION_RESTRICTIONS,
+            GH_CHECK_RUN_BUILDER_ACTION, GH_CHECK_RUN_BUILDER_ANNOTATION, GH_CHECK_RUN_BUILDER_IMAGE,
+            GH_CHECK_RUN_BUILDER_OUTPUT,
+            GH_CHECK_RUN_OUTPUT, GH_CHECK_RUNS_PAGE, GH_CHECK_SUITE_HEAD_COMMIT,
             GH_COMMIT_FILE, GH_COMMIT_PARENT, GH_COMMIT_SHORT_INFO,
             GH_COMMIT_STATS, GH_COMMIT_TREE, GH_COMMIT_USER,
             GH_COMMIT_POINTER, GH_COMPARE, GH_COMPARE_INNER_COMMIT, GH_COMPARE_TREE, GH_CONTENT_UPDATE_RESPONSE,
