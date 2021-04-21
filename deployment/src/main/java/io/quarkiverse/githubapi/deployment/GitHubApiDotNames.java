@@ -31,6 +31,7 @@ import org.kohsuke.github.GHIssueChanges;
 import org.kohsuke.github.GHIssueEvent;
 import org.kohsuke.github.GHKey;
 import org.kohsuke.github.GHLabel;
+import org.kohsuke.github.GHLabelChanges;
 import org.kohsuke.github.GHMarketplaceAccount;
 import org.kohsuke.github.GHMarketplacePendingChange;
 import org.kohsuke.github.GHMarketplacePlan;
@@ -137,6 +138,8 @@ final class GitHubApiDotNames {
     private static final DotName GH_ISSUE_PULL_REQUEST = DotName.createSimple(GHIssue.PullRequest.class.getName());
     private static final DotName GH_ISSUE_EVENT = DotName.createSimple(GHIssueEvent.class.getName());
     private static final DotName GH_LABEL = DotName.createSimple(GHLabel.class.getName());
+    private static final DotName GH_LABEL_CHANGES = DotName.createSimple(GHLabelChanges.class.getName());
+    private static final DotName GH_LABEL_CHANGES_GH_FROM = DotName.createSimple(GHLabelChanges.GHFrom.class.getName());
     private static final DotName GH_MARKETPLACE_PENDING_CHANGE = DotName
             .createSimple(GHMarketplacePendingChange.class.getName());
     private static final DotName GH_MARKETPLACE_PLAN = DotName.createSimple(GHMarketplacePlan.class.getName());
@@ -210,7 +213,8 @@ final class GitHubApiDotNames {
             GH_DEPLOY_KEY,
             GH_EMAIL, GH_EVENT_INFO, GH_EVENT_INFO_GH_EVENT_REPOSITORY, GH_EVENT_PAYLOAD_PUSH_PUSHER,
             GH_EVENT_PAYLOAD_PUSH_PUSH_COMMIT, GH_GIST_FILE, GH_ISSUE_CHANGES, GH_ISSUE_CHANGES_GH_FROM,
-            GH_ISSUE_PULL_REQUEST, GH_ISSUE_EVENT, GH_LABEL,
+            GH_ISSUE_PULL_REQUEST, GH_ISSUE_EVENT,
+            GH_LABEL, GH_LABEL_CHANGES, GH_LABEL_CHANGES_GH_FROM,
             GH_MARKETPLACE_PENDING_CHANGE, GH_MARKETPLACE_PLAN,
             GH_MARKETPLACE_PURCHASE, GH_MARKETPLACE_USER_PURCHASE, GH_MEMBERSHIP, GH_META, GH_NOTIFICATION_STREAM,
             GH_ORG_HOOK, GH_PERMISSION, GH_PULL_REQUEST_CHANGES, GH_PULL_REQUEST_CHANGES_GH_FROM,
