@@ -115,7 +115,7 @@ final class GitHubApiDotNames {
     private static final DotName GH_COMMIT_PARENT = DotName.createSimple(GHCommit.Parent.class.getName());
     private static final DotName GH_COMMIT_SHORT_INFO = DotName.createSimple(GHCommit.ShortInfo.class.getName());
     private static final DotName GH_COMMIT_STATS = DotName.createSimple(GHCommit.Stats.class.getName());
-    private static final DotName GH_COMMIT_TREE = DotName.createSimple(GHCommit.class.getName() + "$Tree");
+    private static final DotName GH_COMMIT_TREE = DotName.createSimple(GHCommit.ShortInfo.class.getName() + "$Tree");
     private static final DotName GH_COMMIT_USER = DotName.createSimple(GHCommit.class.getName() + "$User");
     private static final DotName GH_COMMIT_POINTER = DotName.createSimple(GHCommitPointer.class.getName());
     private static final DotName GH_COMPARE = DotName.createSimple(GHCompare.class.getName());
