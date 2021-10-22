@@ -25,7 +25,7 @@
         <resource-plugin.version>3.2.0</resource-plugin.version>
         <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
 
-        <github-api.version>1.132</github-api.version>
+        <github-api.version>1.135</github-api.version>
         <okhttp.version>4.9.1</okhttp.version>
     </properties>
 
