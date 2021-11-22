@@ -26,7 +26,7 @@
         <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
 
         <github-api.version>1.132</github-api.version>
-        <okhttp.version>4.9.1</okhttp.version>
+        <okhttp.version>4.9.3</okhttp.version>
     </properties>
 
     <modules>
