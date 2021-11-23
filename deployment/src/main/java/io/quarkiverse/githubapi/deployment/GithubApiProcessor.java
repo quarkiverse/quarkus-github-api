@@ -4,6 +4,8 @@ import static io.quarkiverse.githubapi.deployment.GitHubApiDotNames.GH_ROOT_OBJE
 import static io.quarkiverse.githubapi.deployment.GitHubApiDotNames.GH_SIMPLE_OBJECTS;
 
 import org.jboss.jandex.DotName;
+import org.kohsuke.github.connector.GitHubConnector;
+import org.kohsuke.github.extras.HttpClientGitHubConnector;
 
 import io.quarkus.deployment.annotations.BuildProducer;
 import io.quarkus.deployment.annotations.BuildStep;
@@ -12,6 +14,7 @@ import io.quarkus.deployment.builditem.ExtensionSslNativeSupportBuildItem;
 import io.quarkus.deployment.builditem.FeatureBuildItem;
 import io.quarkus.deployment.builditem.IndexDependencyBuildItem;
 import io.quarkus.deployment.builditem.nativeimage.ReflectiveClassBuildItem;
+import io.quarkus.deployment.builditem.nativeimage.RuntimeInitializedClassBuildItem;
 
 class GithubApiProcessor {
 
@@ -46,5 +49,11 @@ class GithubApiProcessor {
 
         reflectiveClasses.produce(new ReflectiveClassBuildItem(true, true,
                 GH_SIMPLE_OBJECTS.stream().map(DotName::toString).toArray(String[]::new)));
+    }
+
+    @BuildStep
+    void runtimeInitialized(BuildProducer<RuntimeInitializedClassBuildItem> runtimeInitializedClasses) {
+        runtimeInitializedClasses.produce(new RuntimeInitializedClassBuildItem(HttpClientGitHubConnector.class.getName()));
+        runtimeInitializedClasses.produce(new RuntimeInitializedClassBuildItem(GitHubConnector.class.getName()));
     }
 }
