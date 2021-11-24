@@ -26,7 +26,6 @@
         <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
 
         <github-api.version>1.301</github-api.version>
-        <okhttp.version>4.9.2</okhttp.version>
     </properties>
 
     <modules>
@@ -48,11 +47,6 @@
                 <groupId>org.kohsuke</groupId>
                 <artifactId>github-api</artifactId>
                 <version>${github-api.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.squareup.okhttp3</groupId>
-                <artifactId>okhttp</artifactId>
-                <version>${okhttp.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
