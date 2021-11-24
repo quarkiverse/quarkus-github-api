@@ -40,13 +40,13 @@ import org.kohsuke.github.GHMarketplaceUserPurchase;
 import org.kohsuke.github.GHMembership;
 import org.kohsuke.github.GHMeta;
 import org.kohsuke.github.GHNotificationStream;
-import org.kohsuke.github.GHObject;
 import org.kohsuke.github.GHPullRequestChanges;
 import org.kohsuke.github.GHPullRequestCommitDetail;
 import org.kohsuke.github.GHPullRequestFileDetail;
 import org.kohsuke.github.GHRateLimit;
 import org.kohsuke.github.GHRef;
 import org.kohsuke.github.GHRepository;
+import org.kohsuke.github.GHRepositoryDiscussion;
 import org.kohsuke.github.GHRepositoryStatistics;
 import org.kohsuke.github.GHRepositoryTraffic;
 import org.kohsuke.github.GHStargazer;
@@ -68,7 +68,7 @@ final class GitHubApiDotNames {
     static final DotName GH_EVENT_PAYLOAD = DotName.createSimple(GHEventPayload.class.getName());
     private static final DotName GH_MARKETPLACE_ACCOUNT = DotName.createSimple(GHMarketplaceAccount.class.getName());
     private static final DotName GH_CONTENT = DotName.createSimple(GHContent.class.getName());
-    private static final DotName GH_OBJECT = DotName.createSimple(GHObject.class.getName());
+    private static final DotName GITHUB_INTERACTIVE_OBJECT = DotName.createSimple("org.kohsuke.github.GitHubInteractiveObject");
     private static final DotName PAGED_ITERABLE = DotName.createSimple(PagedIterable.class.getName());
     private static final DotName GH_HOOK = DotName.createSimple(GHHook.class.getName());
     private static final DotName GH_REPOSITORY_TRAFFIC = DotName.createSimple(GHRepositoryTraffic.class.getName());
@@ -79,7 +79,8 @@ final class GitHubApiDotNames {
     private static final DotName GIT_USER = DotName.createSimple(GitUser.class.getName());
     private static final DotName GH_COMMIT = DotName.createSimple(GHCommit.class.getName());
 
-    static final List<DotName> GH_ROOT_OBJECTS = Arrays.asList(GH_EVENT_PAYLOAD, GH_MARKETPLACE_ACCOUNT, GH_CONTENT, GH_OBJECT,
+    static final List<DotName> GH_ROOT_OBJECTS = Arrays.asList(GH_EVENT_PAYLOAD, GH_MARKETPLACE_ACCOUNT, GH_CONTENT,
+            GITHUB_INTERACTIVE_OBJECT,
             PAGED_ITERABLE, GH_HOOK, GH_REPOSITORY_TRAFFIC, GH_REPOSITORY_TRAFFIC_DAILY_INFO, GH_KEY, SEARCH_RESULT, GIT_USER,
             GH_COMMIT);
 
@@ -170,6 +171,8 @@ final class GitHubApiDotNames {
             .createSimple(GHRateLimit.UnknownLimitRecord.class.getName());
     private static final DotName GH_REF = DotName.createSimple(GHRef.class.getName());
     private static final DotName GH_REF_GH_OBJECT = DotName.createSimple(GHRef.GHObject.class.getName());
+    private static final DotName GH_REPOSITORY_DISCUSSION_CATEGORY = DotName
+            .createSimple(GHRepositoryDiscussion.Category.class.getName());
     private static final DotName GH_REPOSITORY_GH_REPO_PERMISSION = DotName
             .createSimple(GHRepository.class.getName() + "$GHRepoPermission");
     private static final DotName GH_REPOSITORY_TOPICS = DotName.createSimple(GHRepository.class.getName() + "$Topics");
@@ -222,12 +225,13 @@ final class GitHubApiDotNames {
             GH_PULL_REQUEST_COMMIT_DETAIL, GH_PULL_REQUEST_COMMIT_DETAIL_COMMIT,
             GH_PULL_REQUEST_COMMIT_DETAIL_COMMIT_POINTER, GH_PULL_REQUEST_COMMIT_DETAIL_TREE,
             GH_PULL_REQUEST_FILE_DETAIL, GH_RATE_LIMIT, GH_RATE_LIMIT_RECORD, GH_RATE_LIMIT_UNKNOWN_LIMIT_RECORD, GH_REF,
-            GH_REF_GH_OBJECT, GH_REPOSITORY_GH_REPO_PERMISSION, GH_REPOSITORY_TOPICS,
+            GH_REF_GH_OBJECT, GH_REPOSITORY_DISCUSSION_CATEGORY, GH_REPOSITORY_GH_REPO_PERMISSION, GH_REPOSITORY_TOPICS,
             GH_REPOSITORY_STATISTICS, GH_REPOSITORY_STATISTICS_CONTRIBUTOR_STATS_WEEK, GH_REPOSITORY_STATISTICS_CODE_FREQUENCY,
             GH_REPOSITORY_STATISTICS_PUNCH_CARD_ITEM, GH_STARGAZER, GH_SUBSCRIPTION, GH_TAG, GH_TAG_OBJECT, GH_THREAD_SUBJECT,
             GH_TREE, GH_TREE_ENTRY, GH_VERIFICATION,
             GH_WORKFLOW_JOB_STEP, GH_WORKFLOW_JOBS_PAGE, GH_WORKFLOW_RUN_HEAD_COMMIT, GH_WORKFLOW_RUNS_PAGE, GH_WORKFLOWS_PAGE,
-            GITHUB_REQUEST, GITHUB_REQUEST_ENTRY, GITHUB_RESPONSE, JSON_RATE_LIMIT);
+            GITHUB_REQUEST, GITHUB_REQUEST_ENTRY, GITHUB_RESPONSE,
+            JSON_RATE_LIMIT);
 
     private GitHubApiDotNames() {
     }

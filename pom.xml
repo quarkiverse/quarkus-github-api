@@ -9,7 +9,7 @@
 
     <groupId>io.quarkiverse.githubapi</groupId>
     <artifactId>quarkus-github-api-parent</artifactId>
-    <version>1.132.0-SNAPSHOT</version>
+    <version>1.301-SNAPSHOT</version>
     <name>Quarkus - GitHub API - Parent</name>
 
     <packaging>pom</packaging>
@@ -25,8 +25,8 @@
         <resource-plugin.version>3.2.0</resource-plugin.version>
         <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
 
-        <github-api.version>1.132</github-api.version>
-        <okhttp.version>4.9.3</okhttp.version>
+        <github-api.version>1.301</github-api.version>
+        <okhttp.version>4.9.2</okhttp.version>
     </properties>
 
     <modules>
