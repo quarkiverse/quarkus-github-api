@@ -19,17 +19,6 @@ The main purpose of this extension is to make it possible to build native execut
 </dependency>
 ```
 
-## Native support
-
-The default HTTP connector is not working in native.
-Use the OkHttp connector provided by the GitHub API:
-
-```java
-GitHub gitHub = GitHubBuilder.fromEnvironment()
-    .withConnector(new OkHttpConnector(new OkHttpClient()))
-    .build();
-```
-
 ## License
 
 While this extension itself is licensed under the Apache License version 2.0,
