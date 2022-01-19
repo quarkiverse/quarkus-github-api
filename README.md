@@ -19,6 +19,9 @@ The main purpose of this extension is to make it possible to build native execut
 </dependency>
 ```
 
+Note: using the OkHttp client is not supported anymore so please stick to the default of using the JDK 11+ HTTP client
+(you don't have to do anything for that, it is the default behavior).
+
 ## License
 
 While this extension itself is licensed under the Apache License version 2.0,
