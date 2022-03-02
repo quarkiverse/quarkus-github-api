@@ -128,6 +128,10 @@ final class GitHubApiDotNames {
     private static final DotName GH_EVENT_INFO = DotName.createSimple(GHEventInfo.class.getName());
     private static final DotName GH_EVENT_INFO_GH_EVENT_REPOSITORY = DotName
             .createSimple(GHEventInfo.GHEventRepository.class.getName());
+    private static final DotName GH_EVENT_PAYLOAD_COMMENT_CHANGES = DotName
+            .createSimple(GHEventPayload.CommentChanges.class.getName());
+    private static final DotName GH_EVENT_PAYLOAD_COMMENT_CHANGES_GH_FROM = DotName
+            .createSimple(GHEventPayload.CommentChanges.GHFrom.class.getName());
     private static final DotName GH_EVENT_PAYLOAD_PUSH_PUSHER = DotName
             .createSimple(GHEventPayload.Push.Pusher.class.getName());
     private static final DotName GH_EVENT_PAYLOAD_PUSH_PUSH_COMMIT = DotName
@@ -214,8 +218,10 @@ final class GitHubApiDotNames {
             GH_COMMIT_STATS, GH_COMMIT_TREE, GH_COMMIT_USER,
             GH_COMMIT_POINTER, GH_COMPARE, GH_COMPARE_INNER_COMMIT, GH_COMPARE_TREE, GH_CONTENT_UPDATE_RESPONSE,
             GH_DEPLOY_KEY,
-            GH_EMAIL, GH_EVENT_INFO, GH_EVENT_INFO_GH_EVENT_REPOSITORY, GH_EVENT_PAYLOAD_PUSH_PUSHER,
-            GH_EVENT_PAYLOAD_PUSH_PUSH_COMMIT, GH_GIST_FILE, GH_ISSUE_CHANGES, GH_ISSUE_CHANGES_GH_FROM,
+            GH_EMAIL, GH_EVENT_INFO, GH_EVENT_INFO_GH_EVENT_REPOSITORY,
+            GH_EVENT_PAYLOAD_COMMENT_CHANGES, GH_EVENT_PAYLOAD_COMMENT_CHANGES_GH_FROM,
+            GH_EVENT_PAYLOAD_PUSH_PUSHER, GH_EVENT_PAYLOAD_PUSH_PUSH_COMMIT,
+            GH_GIST_FILE, GH_ISSUE_CHANGES, GH_ISSUE_CHANGES_GH_FROM,
             GH_ISSUE_PULL_REQUEST, GH_ISSUE_EVENT,
             GH_LABEL, GH_LABEL_CHANGES, GH_LABEL_CHANGES_GH_FROM,
             GH_MARKETPLACE_PENDING_CHANGE, GH_MARKETPLACE_PLAN,
