@@ -4,7 +4,7 @@
     <parent>
         <groupId>io.quarkiverse.githubapi</groupId>
         <artifactId>quarkus-github-api-parent</artifactId>
-        <version>1.302.0-SNAPSHOT</version>
+        <version>1.302.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
