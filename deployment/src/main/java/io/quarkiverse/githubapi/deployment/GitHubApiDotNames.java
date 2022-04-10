@@ -40,6 +40,7 @@ import org.kohsuke.github.GHMarketplaceUserPurchase;
 import org.kohsuke.github.GHMembership;
 import org.kohsuke.github.GHMeta;
 import org.kohsuke.github.GHNotificationStream;
+import org.kohsuke.github.GHPullRequest;
 import org.kohsuke.github.GHPullRequestChanges;
 import org.kohsuke.github.GHPullRequestCommitDetail;
 import org.kohsuke.github.GHPullRequestFileDetail;
@@ -155,6 +156,7 @@ final class GitHubApiDotNames {
     private static final DotName GH_NOTIFICATION_STREAM = DotName.createSimple(GHNotificationStream.class.getName());
     private static final DotName GH_ORG_HOOK = DotName.createSimple("org.kohsuke.github.GHOrgHook");
     private static final DotName GH_PERMISSION = DotName.createSimple("org.kohsuke.github.GHPermission");
+    private static final DotName GH_PULL_REQUEST_AUTO_MERGE = DotName.createSimple(GHPullRequest.AutoMerge.class.getName());
     private static final DotName GH_PULL_REQUEST_CHANGES = DotName.createSimple(GHPullRequestChanges.class.getName());
     private static final DotName GH_PULL_REQUEST_CHANGES_GH_FROM = DotName
             .createSimple(GHPullRequestChanges.GHFrom.class.getName());
@@ -226,7 +228,7 @@ final class GitHubApiDotNames {
             GH_LABEL, GH_LABEL_CHANGES, GH_LABEL_CHANGES_GH_FROM,
             GH_MARKETPLACE_PENDING_CHANGE, GH_MARKETPLACE_PLAN,
             GH_MARKETPLACE_PURCHASE, GH_MARKETPLACE_USER_PURCHASE, GH_MEMBERSHIP, GH_META, GH_NOTIFICATION_STREAM,
-            GH_ORG_HOOK, GH_PERMISSION, GH_PULL_REQUEST_CHANGES, GH_PULL_REQUEST_CHANGES_GH_FROM,
+            GH_ORG_HOOK, GH_PERMISSION, GH_PULL_REQUEST_AUTO_MERGE, GH_PULL_REQUEST_CHANGES, GH_PULL_REQUEST_CHANGES_GH_FROM,
             GH_PULL_REQUEST_CHANGES_GH_COMMIT_POINTER,
             GH_PULL_REQUEST_COMMIT_DETAIL, GH_PULL_REQUEST_COMMIT_DETAIL_COMMIT,
             GH_PULL_REQUEST_COMMIT_DETAIL_COMMIT_POINTER, GH_PULL_REQUEST_COMMIT_DETAIL_TREE,
