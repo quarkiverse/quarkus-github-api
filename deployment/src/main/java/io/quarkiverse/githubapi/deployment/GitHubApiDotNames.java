@@ -29,6 +29,7 @@ import org.kohsuke.github.GHHook;
 import org.kohsuke.github.GHIssue;
 import org.kohsuke.github.GHIssueChanges;
 import org.kohsuke.github.GHIssueEvent;
+import org.kohsuke.github.GHIssueSearchBuilder;
 import org.kohsuke.github.GHKey;
 import org.kohsuke.github.GHLabel;
 import org.kohsuke.github.GHLabelChanges;
@@ -48,6 +49,7 @@ import org.kohsuke.github.GHRateLimit;
 import org.kohsuke.github.GHRef;
 import org.kohsuke.github.GHRepository;
 import org.kohsuke.github.GHRepositoryDiscussion;
+import org.kohsuke.github.GHRepositorySearchBuilder;
 import org.kohsuke.github.GHRepositoryStatistics;
 import org.kohsuke.github.GHRepositoryTraffic;
 import org.kohsuke.github.GHStargazer;
@@ -77,12 +79,16 @@ final class GitHubApiDotNames {
             .createSimple(GHRepositoryTraffic.DailyInfo.class.getName());
     private static final DotName GH_KEY = DotName.createSimple(GHKey.class.getName());
     private static final DotName SEARCH_RESULT = DotName.createSimple(SearchResult.class.getName());
+    private static final DotName REPOSITORY_SEARCH_RESULT =
+            DotName.createSimple(GHRepositorySearchBuilder.class.getName() + "$RepositorySearchResult");
+    private static final DotName ISSUE_SEARCH_RESULT =
+            DotName.createSimple(GHIssueSearchBuilder.class.getName() + "$IssueSearchResult");
     private static final DotName GIT_USER = DotName.createSimple(GitUser.class.getName());
     private static final DotName GH_COMMIT = DotName.createSimple(GHCommit.class.getName());
 
     static final List<DotName> GH_ROOT_OBJECTS = Arrays.asList(GH_EVENT_PAYLOAD, GH_MARKETPLACE_ACCOUNT, GH_CONTENT,
             GITHUB_INTERACTIVE_OBJECT,
-            PAGED_ITERABLE, GH_HOOK, GH_REPOSITORY_TRAFFIC, GH_REPOSITORY_TRAFFIC_DAILY_INFO, GH_KEY, SEARCH_RESULT, GIT_USER,
+            PAGED_ITERABLE, GH_HOOK, GH_REPOSITORY_TRAFFIC, GH_REPOSITORY_TRAFFIC_DAILY_INFO, GH_KEY, SEARCH_RESULT, REPOSITORY_SEARCH_RESULT, ISSUE_SEARCH_RESULT, GIT_USER,
             GH_COMMIT);
 
     // Simple objects
