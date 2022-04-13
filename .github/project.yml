@@ -1,5 +1,5 @@
 name: Quarkus GitHub API
 release:
-  current-version: 1.303.1
+  current-version: 1.303.2
   next-version: 1.304.0-SNAPSHOT
 
