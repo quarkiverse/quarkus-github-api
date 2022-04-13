@@ -3,8 +3,6 @@ package io.quarkiverse.githubapi.deployment;
 import java.util.Arrays;
 import java.util.List;
 
-import javax.naming.directory.SearchResult;
-
 import org.jboss.jandex.DotName;
 import org.kohsuke.github.GHAppInstallation;
 import org.kohsuke.github.GHAppInstallationToken;
@@ -76,7 +74,7 @@ final class GitHubApiDotNames {
     private static final DotName GH_REPOSITORY_TRAFFIC_DAILY_INFO = DotName
             .createSimple(GHRepositoryTraffic.DailyInfo.class.getName());
     private static final DotName GH_KEY = DotName.createSimple(GHKey.class.getName());
-    private static final DotName SEARCH_RESULT = DotName.createSimple(SearchResult.class.getName());
+    private static final DotName SEARCH_RESULT = DotName.createSimple("org.kohsuke.github.SearchResult");
     private static final DotName GIT_USER = DotName.createSimple(GitUser.class.getName());
     private static final DotName GH_COMMIT = DotName.createSimple(GHCommit.class.getName());
 
