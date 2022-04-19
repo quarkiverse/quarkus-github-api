@@ -38,6 +38,7 @@ import org.kohsuke.github.GHMarketplaceUserPurchase;
 import org.kohsuke.github.GHMembership;
 import org.kohsuke.github.GHMeta;
 import org.kohsuke.github.GHNotificationStream;
+import org.kohsuke.github.GHOrganization;
 import org.kohsuke.github.GHPullRequest;
 import org.kohsuke.github.GHPullRequestChanges;
 import org.kohsuke.github.GHPullRequestCommitDetail;
@@ -58,6 +59,7 @@ import org.kohsuke.github.GHTreeEntry;
 import org.kohsuke.github.GHVerification;
 import org.kohsuke.github.GHWorkflowJob;
 import org.kohsuke.github.GHWorkflowRun;
+import org.kohsuke.github.GitCommit;
 import org.kohsuke.github.GitUser;
 import org.kohsuke.github.PagedIterable;
 
@@ -153,6 +155,8 @@ final class GitHubApiDotNames {
     private static final DotName GH_META = DotName.createSimple(GHMeta.class.getName());
     private static final DotName GH_NOTIFICATION_STREAM = DotName.createSimple(GHNotificationStream.class.getName());
     private static final DotName GH_ORG_HOOK = DotName.createSimple("org.kohsuke.github.GHOrgHook");
+    private static final DotName GH_ORGANIZATION_REPOSITORY_ROLE = DotName
+            .createSimple(GHOrganization.RepositoryRole.class.getName());
     private static final DotName GH_PERMISSION = DotName.createSimple("org.kohsuke.github.GHPermission");
     private static final DotName GH_PULL_REQUEST_AUTO_MERGE = DotName.createSimple(GHPullRequest.AutoMerge.class.getName());
     private static final DotName GH_PULL_REQUEST_CHANGES = DotName.createSimple(GHPullRequestChanges.class.getName());
@@ -200,6 +204,8 @@ final class GitHubApiDotNames {
     private static final DotName GH_WORKFLOW_RUN_HEAD_COMMIT = DotName.createSimple(GHWorkflowRun.HeadCommit.class.getName());
     private static final DotName GH_WORKFLOW_RUNS_PAGE = DotName.createSimple("org.kohsuke.github.GHWorkflowRunsPage");
     private static final DotName GH_WORKFLOWS_PAGE = DotName.createSimple("org.kohsuke.github.GHWorkflowsPage");
+    private static final DotName GIT_COMMIT = DotName.createSimple(GitCommit.class.getName());
+    private static final DotName GIT_COMMIT_TREE = DotName.createSimple(GitCommit.class.getName() + "$Tree");
     private static final DotName GITHUB_REQUEST = DotName.createSimple("org.kohsuke.github.GitHubRequest");
     private static final DotName GITHUB_REQUEST_ENTRY = DotName.createSimple("org.kohsuke.github.GitHubRequest$Entry");
     private static final DotName GITHUB_RESPONSE = DotName.createSimple("org.kohsuke.github.GitHubResponse");
@@ -226,7 +232,8 @@ final class GitHubApiDotNames {
             GH_LABEL, GH_LABEL_CHANGES, GH_LABEL_CHANGES_GH_FROM,
             GH_MARKETPLACE_PENDING_CHANGE, GH_MARKETPLACE_PLAN,
             GH_MARKETPLACE_PURCHASE, GH_MARKETPLACE_USER_PURCHASE, GH_MEMBERSHIP, GH_META, GH_NOTIFICATION_STREAM,
-            GH_ORG_HOOK, GH_PERMISSION, GH_PULL_REQUEST_AUTO_MERGE, GH_PULL_REQUEST_CHANGES, GH_PULL_REQUEST_CHANGES_GH_FROM,
+            GH_ORG_HOOK, GH_ORGANIZATION_REPOSITORY_ROLE, GH_PERMISSION,
+            GH_PULL_REQUEST_AUTO_MERGE, GH_PULL_REQUEST_CHANGES, GH_PULL_REQUEST_CHANGES_GH_FROM,
             GH_PULL_REQUEST_CHANGES_GH_COMMIT_POINTER,
             GH_PULL_REQUEST_COMMIT_DETAIL, GH_PULL_REQUEST_COMMIT_DETAIL_COMMIT,
             GH_PULL_REQUEST_COMMIT_DETAIL_COMMIT_POINTER, GH_PULL_REQUEST_COMMIT_DETAIL_TREE,
@@ -236,6 +243,7 @@ final class GitHubApiDotNames {
             GH_REPOSITORY_STATISTICS_PUNCH_CARD_ITEM, GH_STARGAZER, GH_SUBSCRIPTION, GH_TAG, GH_TAG_OBJECT, GH_THREAD_SUBJECT,
             GH_TREE, GH_TREE_ENTRY, GH_VERIFICATION,
             GH_WORKFLOW_JOB_STEP, GH_WORKFLOW_JOBS_PAGE, GH_WORKFLOW_RUN_HEAD_COMMIT, GH_WORKFLOW_RUNS_PAGE, GH_WORKFLOWS_PAGE,
+            GIT_COMMIT, GIT_COMMIT_TREE,
             GITHUB_REQUEST, GITHUB_REQUEST_ENTRY, GITHUB_RESPONSE,
             JSON_RATE_LIMIT);
 
