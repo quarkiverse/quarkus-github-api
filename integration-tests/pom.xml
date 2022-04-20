@@ -4,7 +4,7 @@
     <parent>
         <groupId>io.quarkiverse.githubapi</groupId>
         <artifactId>quarkus-github-api-parent</artifactId>
-        <version>1.305.0</version>
+        <version>1.306.0-SNAPSHOT</version>
     </parent>
     <artifactId>quarkus-github-api-integration-tests</artifactId>
     <name>Quarkus - GitHub API - Integration Tests</name>
