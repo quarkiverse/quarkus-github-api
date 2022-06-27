@@ -23,7 +23,7 @@
         <quarkus.version>2.8.1.Final</quarkus.version>
         <compiler-plugin.version>3.10.1</compiler-plugin.version>
         <resource-plugin.version>3.2.0</resource-plugin.version>
-        <surefire-plugin.version>3.0.0-M6</surefire-plugin.version>
+        <surefire-plugin.version>3.0.0-M7</surefire-plugin.version>
 
         <github-api.version>1.306</github-api.version>
     </properties>
