@@ -39,6 +39,7 @@ import org.kohsuke.github.GHMembership;
 import org.kohsuke.github.GHMeta;
 import org.kohsuke.github.GHNotificationStream;
 import org.kohsuke.github.GHOrganization;
+import org.kohsuke.github.GHProjectsV2ItemChanges;
 import org.kohsuke.github.GHPullRequest;
 import org.kohsuke.github.GHPullRequestChanges;
 import org.kohsuke.github.GHPullRequestCommitDetail;
@@ -158,6 +159,13 @@ final class GitHubApiDotNames {
     private static final DotName GH_ORGANIZATION_REPOSITORY_ROLE = DotName
             .createSimple(GHOrganization.RepositoryRole.class.getName());
     private static final DotName GH_PERMISSION = DotName.createSimple("org.kohsuke.github.GHPermission");
+    private static final DotName GH_PROJECTS_V2_ITEM_CHANGES = DotName.createSimple(GHProjectsV2ItemChanges.class.getName());
+    private static final DotName GH_PROJECTS_V2_ITEM_CHANGES_FIELD_VALUE = DotName
+            .createSimple(GHProjectsV2ItemChanges.FieldValue.class.getName());
+    private static final DotName GH_PROJECTS_V2_ITEM_CHANGES_FROM_TO = DotName
+            .createSimple(GHProjectsV2ItemChanges.FromTo.class.getName());
+    private static final DotName GH_PROJECTS_V2_ITEM_CHANGES_FROM_TO_DATE = DotName
+            .createSimple(GHProjectsV2ItemChanges.FromToDate.class.getName());
     private static final DotName GH_PULL_REQUEST_AUTO_MERGE = DotName.createSimple(GHPullRequest.AutoMerge.class.getName());
     private static final DotName GH_PULL_REQUEST_CHANGES = DotName.createSimple(GHPullRequestChanges.class.getName());
     private static final DotName GH_PULL_REQUEST_CHANGES_GH_FROM = DotName
@@ -233,6 +241,8 @@ final class GitHubApiDotNames {
             GH_MARKETPLACE_PENDING_CHANGE, GH_MARKETPLACE_PLAN,
             GH_MARKETPLACE_PURCHASE, GH_MARKETPLACE_USER_PURCHASE, GH_MEMBERSHIP, GH_META, GH_NOTIFICATION_STREAM,
             GH_ORG_HOOK, GH_ORGANIZATION_REPOSITORY_ROLE, GH_PERMISSION,
+            GH_PROJECTS_V2_ITEM_CHANGES, GH_PROJECTS_V2_ITEM_CHANGES_FIELD_VALUE, GH_PROJECTS_V2_ITEM_CHANGES_FROM_TO,
+            GH_PROJECTS_V2_ITEM_CHANGES_FROM_TO_DATE,
             GH_PULL_REQUEST_AUTO_MERGE, GH_PULL_REQUEST_CHANGES, GH_PULL_REQUEST_CHANGES_GH_FROM,
             GH_PULL_REQUEST_CHANGES_GH_COMMIT_POINTER,
             GH_PULL_REQUEST_COMMIT_DETAIL, GH_PULL_REQUEST_COMMIT_DETAIL_COMMIT,
