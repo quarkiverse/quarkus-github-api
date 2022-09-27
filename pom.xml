@@ -25,7 +25,7 @@
         <resource-plugin.version>3.3.0</resource-plugin.version>
         <surefire-plugin.version>3.0.0-M7</surefire-plugin.version>
 
-        <github-api.version>1.308</github-api.version>
+        <github-api.version>1.313</github-api.version>
     </properties>
 
     <modules>
