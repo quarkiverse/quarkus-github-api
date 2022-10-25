@@ -38,6 +38,7 @@ import org.kohsuke.github.GHMarketplaceUserPurchase;
 import org.kohsuke.github.GHMembership;
 import org.kohsuke.github.GHMeta;
 import org.kohsuke.github.GHNotificationStream;
+import org.kohsuke.github.GHObject;
 import org.kohsuke.github.GHOrganization;
 import org.kohsuke.github.GHProjectsV2ItemChanges;
 import org.kohsuke.github.GHPullRequest;
@@ -62,7 +63,6 @@ import org.kohsuke.github.GHWorkflowJob;
 import org.kohsuke.github.GHWorkflowRun;
 import org.kohsuke.github.GitCommit;
 import org.kohsuke.github.GitUser;
-import org.kohsuke.github.PagedIterable;
 
 final class GitHubApiDotNames {
 
@@ -71,7 +71,7 @@ final class GitHubApiDotNames {
     private static final DotName GH_MARKETPLACE_ACCOUNT = DotName.createSimple(GHMarketplaceAccount.class.getName());
     private static final DotName GH_CONTENT = DotName.createSimple(GHContent.class.getName());
     private static final DotName GITHUB_INTERACTIVE_OBJECT = DotName.createSimple("org.kohsuke.github.GitHubInteractiveObject");
-    private static final DotName PAGED_ITERABLE = DotName.createSimple(PagedIterable.class.getName());
+    private static final DotName GH_OBJECT = DotName.createSimple(GHObject.class.getName());
     private static final DotName GH_HOOK = DotName.createSimple(GHHook.class.getName());
     private static final DotName GH_REPOSITORY_TRAFFIC = DotName.createSimple(GHRepositoryTraffic.class.getName());
     private static final DotName GH_REPOSITORY_TRAFFIC_DAILY_INFO = DotName
@@ -82,8 +82,8 @@ final class GitHubApiDotNames {
     private static final DotName GH_COMMIT = DotName.createSimple(GHCommit.class.getName());
 
     static final List<DotName> GH_ROOT_OBJECTS = Arrays.asList(GH_EVENT_PAYLOAD, GH_MARKETPLACE_ACCOUNT, GH_CONTENT,
-            GITHUB_INTERACTIVE_OBJECT,
-            PAGED_ITERABLE, GH_HOOK, GH_REPOSITORY_TRAFFIC, GH_REPOSITORY_TRAFFIC_DAILY_INFO, GH_KEY, SEARCH_RESULT, GIT_USER,
+            GH_OBJECT,
+            GH_HOOK, GH_REPOSITORY_TRAFFIC, GH_REPOSITORY_TRAFFIC_DAILY_INFO, GH_KEY, SEARCH_RESULT, GIT_USER,
             GH_COMMIT);
 
     // Simple objects
@@ -219,7 +219,9 @@ final class GitHubApiDotNames {
     private static final DotName GITHUB_RESPONSE = DotName.createSimple("org.kohsuke.github.GitHubResponse");
     private static final DotName JSON_RATE_LIMIT = DotName.createSimple("org.kohsuke.github.JsonRateLimit");
 
-    static final List<DotName> GH_SIMPLE_OBJECTS = Arrays.asList(GH_APP_INSTALLATION_GH_APP_INSTALLATION_REPOSITORY_RESULT,
+    static final List<DotName> GH_SIMPLE_OBJECTS = Arrays.asList(
+            GITHUB_INTERACTIVE_OBJECT, // Must be registered for reflection, but not all of its subclasses.
+            GH_APP_INSTALLATION_GH_APP_INSTALLATION_REPOSITORY_RESULT,
             GH_APP_INSTALLATION_TOKEN, GH_APP_AUTHORIZATION_APP, GH_ARTIFACTS_PAGE, GH_BLOB,
             GH_BRANCH,
             GH_BRANCH_COMMIT, GH_BRANCH_PROTECTION, GH_BRANCH_PROTECTION_ENFORCE_ADMINS, GH_BRANCH_PROTECTION_REQUIRED_REVIEWS,
