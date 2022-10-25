@@ -33,6 +33,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "yrodiere",
+      "name": "Yoann Rodière",
+      "avatar_url": "https://avatars.githubusercontent.com/u/412878?v=4",
+      "profile": "https://github.com/yrodiere",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
@@ -40,5 +49,6 @@
   "projectOwner": "quarkiverse",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "skipCi": true
+  "skipCi": true,
+  "commitConvention": "angular"
 }
