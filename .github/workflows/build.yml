@@ -40,7 +40,8 @@ jobs:
 
     - name: Build with Maven
       run: |
-        git checkout origin/quarkus-2.x
+        git fetch origin quarkus-2.x:quarkus-2.x
+        git checkout quarkus-2.x
         mvn -B formatter:validate verify --file pom.xml -Dnative
 
     - name: Delete Quarkiverse Artifacts From Cache
