@@ -36,35 +36,6 @@ class GithubApiProcessor {
     }
 
     @BuildStep
-    void classesWithBridgeMethods(BuildProducer<GitHubApiClassWithBridgeMethodsBuildItem> classesWithBridgeMethods) {
-        classesWithBridgeMethods
-                .produce(new GitHubApiClassWithBridgeMethodsBuildItem("org.kohsuke.github.GHAppInstallationToken",
-                        "getExpiresAt"));
-        classesWithBridgeMethods
-                .produce(new GitHubApiClassWithBridgeMethodsBuildItem("org.kohsuke.github.GHCheckRun", "getStatus",
-                        "getConclusion"));
-        classesWithBridgeMethods
-                .produce(new GitHubApiClassWithBridgeMethodsBuildItem("org.kohsuke.github.GHCommit", "getAuthor",
-                        "getCommitter"));
-        classesWithBridgeMethods
-                .produce(new GitHubApiClassWithBridgeMethodsBuildItem("org.kohsuke.github.GHCompare", "getAuthor",
-                        "getCommitter"));
-        classesWithBridgeMethods.produce(new GitHubApiClassWithBridgeMethodsBuildItem("org.kohsuke.github.GHIssue", "comment",
-                "addLabels", "removeLabel", "removeLabels"));
-        classesWithBridgeMethods
-                .produce(new GitHubApiClassWithBridgeMethodsBuildItem("org.kohsuke.github.GHObject", "getCreatedAt",
-                        "getUrl", "getHtmlUrl", "getId"));
-        classesWithBridgeMethods.produce(new GitHubApiClassWithBridgeMethodsBuildItem(
-                "org.kohsuke.github.GHPullRequestCommitDetail$Commit", "getAuthor", "getCommitter"));
-        classesWithBridgeMethods
-                .produce(new GitHubApiClassWithBridgeMethodsBuildItem("org.kohsuke.github.GHRepository", "getCollaborators"));
-        classesWithBridgeMethods.produce(new GitHubApiClassWithBridgeMethodsBuildItem("org.kohsuke.github.GHUser", "getFollows",
-                "getFollowers", "getOrganizations"));
-        classesWithBridgeMethods
-                .produce(new GitHubApiClassWithBridgeMethodsBuildItem("org.kohsuke.github.GitHub", "getMyself"));
-    }
-
-    @BuildStep
     void registerForReflection(CombinedIndexBuildItem combinedIndex,
             BuildProducer<ReflectiveClassBuildItem> reflectiveClasses) {
         for (DotName rootModelObject : GH_ROOT_OBJECTS) {
