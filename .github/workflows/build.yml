@@ -40,6 +40,8 @@ jobs:
 
     - name: Build with Maven
       run: mvn -B formatter:validate verify --file pom.xml -Dnative
+      env:
+        OAUTH: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Delete Quarkiverse Artifacts From Cache
       shell: bash
