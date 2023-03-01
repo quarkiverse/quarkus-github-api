@@ -14,6 +14,7 @@ import org.kohsuke.github.GHBranchProtection;
 import org.kohsuke.github.GHCheckRun;
 import org.kohsuke.github.GHCheckRunBuilder;
 import org.kohsuke.github.GHCheckSuite;
+import org.kohsuke.github.GHCodeownersError;
 import org.kohsuke.github.GHCommit;
 import org.kohsuke.github.GHCommitPointer;
 import org.kohsuke.github.GHCompare;
@@ -47,6 +48,7 @@ import org.kohsuke.github.GHPullRequest;
 import org.kohsuke.github.GHPullRequestChanges;
 import org.kohsuke.github.GHPullRequestCommitDetail;
 import org.kohsuke.github.GHPullRequestFileDetail;
+import org.kohsuke.github.GHPullRequestReviewCommentReactions;
 import org.kohsuke.github.GHRateLimit;
 import org.kohsuke.github.GHRef;
 import org.kohsuke.github.GHRepository;
@@ -123,13 +125,13 @@ final class GitHubApiDotNames {
     private static final DotName GH_CHECK_RUN_OUTPUT = DotName.createSimple(GHCheckRun.Output.class.getName());
     private static final DotName GH_CHECK_RUNS_PAGE = DotName.createSimple("org.kohsuke.github.GHCheckRunsPage");
     private static final DotName GH_CHECK_SUITE_HEAD_COMMIT = DotName.createSimple(GHCheckSuite.HeadCommit.class.getName());
+    private static final DotName GH_CODEOWNERS_ERROR = DotName.createSimple(GHCodeownersError.class.getName());
     private static final DotName GH_COMMIT_BUILDER_USER_INFO = DotName
             .createSimple("org.kohsuke.github.GHCommitBuilder$UserInfo");
     private static final DotName GH_COMMIT_FILE = DotName.createSimple(GHCommit.File.class.getName());
     private static final DotName GH_COMMIT_PARENT = DotName.createSimple(GHCommit.Parent.class.getName());
     private static final DotName GH_COMMIT_SHORT_INFO = DotName.createSimple(GHCommit.ShortInfo.class.getName());
     private static final DotName GH_COMMIT_STATS = DotName.createSimple(GHCommit.Stats.class.getName());
-    private static final DotName GH_COMMIT_TREE = DotName.createSimple(GHCommit.ShortInfo.class.getName() + "$Tree");
     private static final DotName GH_COMMIT_USER = DotName.createSimple(GHCommit.class.getName() + "$User");
     private static final DotName GH_COMMIT_POINTER = DotName.createSimple(GHCommitPointer.class.getName());
     private static final DotName GH_COMPARE = DotName.createSimple(GHCompare.class.getName());
@@ -195,6 +197,8 @@ final class GitHubApiDotNames {
     private static final DotName GH_PULL_REQUEST_FILE_DETAIL = DotName.createSimple(GHPullRequestFileDetail.class.getName());
     private static final DotName GH_PULL_REQUEST_REVIEW_BUILDER_DRAFT_REVIEW_COMMENT = DotName
             .createSimple("org.kohsuke.github.GHPullRequestReviewBuilder$DraftReviewComment");
+    private static final DotName GH_PULL_REQUEST_REVIEW_COMMENT_REACTIONS = DotName
+            .createSimple(GHPullRequestReviewCommentReactions.class);
     private static final DotName GH_RATE_LIMIT = DotName.createSimple(GHRateLimit.class.getName());
     private static final DotName GH_RATE_LIMIT_RECORD = DotName.createSimple(GHRateLimit.Record.class.getName());
     private static final DotName GH_RATE_LIMIT_UNKNOWN_LIMIT_RECORD = DotName
@@ -203,6 +207,8 @@ final class GitHubApiDotNames {
     private static final DotName GH_REF_GH_OBJECT = DotName.createSimple(GHRef.GHObject.class.getName());
     private static final DotName GH_REPOSITORY_DISCUSSION_CATEGORY = DotName
             .createSimple(GHRepositoryDiscussion.Category.class.getName());
+    private static final DotName GH_REPOSITORY_GH_CODEOWNERS_ERRORS = DotName
+            .createSimple("org.kohsuke.github.GHRepository$GHCodeownersErrors");
     private static final DotName GH_REPOSITORY_GH_REPO_PERMISSION = DotName
             .createSimple(GHRepository.class.getName() + "$GHRepoPermission");
     private static final DotName GH_REPOSITORY_TOPICS = DotName.createSimple(GHRepository.class.getName() + "$Topics");
@@ -250,9 +256,9 @@ final class GitHubApiDotNames {
             GH_CHECK_RUN_BUILDER_ACTION, GH_CHECK_RUN_BUILDER_ANNOTATION, GH_CHECK_RUN_BUILDER_IMAGE,
             GH_CHECK_RUN_BUILDER_OUTPUT,
             GH_CHECK_RUN_OUTPUT, GH_CHECK_RUNS_PAGE, GH_CHECK_SUITE_HEAD_COMMIT,
-            GH_COMMIT_BUILDER_USER_INFO,
+            GH_CODEOWNERS_ERROR, GH_COMMIT_BUILDER_USER_INFO,
             GH_COMMIT_FILE, GH_COMMIT_PARENT, GH_COMMIT_SHORT_INFO,
-            GH_COMMIT_STATS, GH_COMMIT_TREE, GH_COMMIT_USER,
+            GH_COMMIT_STATS, GH_COMMIT_USER,
             GH_COMMIT_POINTER, GH_COMPARE, GH_COMPARE_INNER_COMMIT, GH_COMPARE_TREE, GH_CONTENT_UPDATE_RESPONSE,
             GH_DEPLOY_KEY,
             GH_EMAIL, GH_EVENT_INFO, GH_EVENT_INFO_GH_EVENT_REPOSITORY,
@@ -271,8 +277,10 @@ final class GitHubApiDotNames {
             GH_PULL_REQUEST_COMMIT_DETAIL, GH_PULL_REQUEST_COMMIT_DETAIL_COMMIT,
             GH_PULL_REQUEST_COMMIT_DETAIL_COMMIT_POINTER, GH_PULL_REQUEST_COMMIT_DETAIL_TREE,
             GH_PULL_REQUEST_FILE_DETAIL, GH_PULL_REQUEST_REVIEW_BUILDER_DRAFT_REVIEW_COMMENT,
+            GH_PULL_REQUEST_REVIEW_COMMENT_REACTIONS,
             GH_RATE_LIMIT, GH_RATE_LIMIT_RECORD, GH_RATE_LIMIT_UNKNOWN_LIMIT_RECORD, GH_REF,
-            GH_REF_GH_OBJECT, GH_REPOSITORY_DISCUSSION_CATEGORY, GH_REPOSITORY_GH_REPO_PERMISSION, GH_REPOSITORY_TOPICS,
+            GH_REF_GH_OBJECT, GH_REPOSITORY_DISCUSSION_CATEGORY, GH_REPOSITORY_GH_CODEOWNERS_ERRORS,
+            GH_REPOSITORY_GH_REPO_PERMISSION, GH_REPOSITORY_TOPICS,
             GH_REPOSITORY_STATISTICS, GH_REPOSITORY_STATISTICS_CONTRIBUTOR_STATS_WEEK, GH_REPOSITORY_STATISTICS_CODE_FREQUENCY,
             GH_REPOSITORY_STATISTICS_PUNCH_CARD_ITEM, GH_STARGAZER, GH_SUBSCRIPTION, GH_TAG, GH_TAG_OBJECT, GH_THREAD_SUBJECT,
             GH_TREE, GH_TREE_BUILDER_TREE_ENTRY, GH_TREE_ENTRY, GH_VERIFICATION,
