@@ -16,7 +16,7 @@ public class GitHubApiResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String extractOuterText() throws IOException {
-        GitHub gitHub = GitHub.connectAnonymously();
+        GitHub gitHub = GitHub.connect();
         GHRepository repository = gitHub.getRepository("quarkiverse/quarkus-github-api");
 
         return repository.getFullName();
