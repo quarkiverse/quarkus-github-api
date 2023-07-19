@@ -55,6 +55,7 @@ import org.kohsuke.github.GHRepository;
 import org.kohsuke.github.GHRepositoryDiscussion;
 import org.kohsuke.github.GHRepositoryStatistics;
 import org.kohsuke.github.GHRepositoryTraffic;
+import org.kohsuke.github.GHRepositoryVariable;
 import org.kohsuke.github.GHStargazer;
 import org.kohsuke.github.GHSubscription;
 import org.kohsuke.github.GHTag;
@@ -219,6 +220,7 @@ final class GitHubApiDotNames {
             .createSimple(GHRepositoryStatistics.CodeFrequency.class.getName());
     private static final DotName GH_REPOSITORY_STATISTICS_PUNCH_CARD_ITEM = DotName
             .createSimple(GHRepositoryStatistics.PunchCardItem.class.getName());
+    private static final DotName GH_REPOSITORY_VARIABLE = DotName.createSimple(GHRepositoryVariable.class);
     private static final DotName GH_STARGAZER = DotName.createSimple(GHStargazer.class.getName());
     private static final DotName GH_SUBSCRIPTION = DotName.createSimple(GHSubscription.class.getName());
     private static final DotName GH_TAG = DotName.createSimple(GHTag.class.getName());
@@ -282,8 +284,9 @@ final class GitHubApiDotNames {
             GH_REF_GH_OBJECT, GH_REPOSITORY_DISCUSSION_CATEGORY, GH_REPOSITORY_GH_CODEOWNERS_ERRORS,
             GH_REPOSITORY_GH_REPO_PERMISSION, GH_REPOSITORY_TOPICS,
             GH_REPOSITORY_STATISTICS, GH_REPOSITORY_STATISTICS_CONTRIBUTOR_STATS_WEEK, GH_REPOSITORY_STATISTICS_CODE_FREQUENCY,
-            GH_REPOSITORY_STATISTICS_PUNCH_CARD_ITEM, GH_STARGAZER, GH_SUBSCRIPTION, GH_TAG, GH_TAG_OBJECT, GH_THREAD_SUBJECT,
-            GH_TREE, GH_TREE_BUILDER_TREE_ENTRY, GH_TREE_ENTRY, GH_VERIFICATION,
+            GH_REPOSITORY_STATISTICS_PUNCH_CARD_ITEM, GH_REPOSITORY_VARIABLE, GH_STARGAZER, GH_SUBSCRIPTION, GH_TAG,
+            GH_TAG_OBJECT,
+            GH_THREAD_SUBJECT, GH_TREE, GH_TREE_BUILDER_TREE_ENTRY, GH_TREE_ENTRY, GH_VERIFICATION,
             GH_WORKFLOW_JOB_STEP, GH_WORKFLOW_JOBS_PAGE, GH_WORKFLOW_RUN_HEAD_COMMIT, GH_WORKFLOW_RUNS_PAGE, GH_WORKFLOWS_PAGE,
             GIT_COMMIT, GIT_COMMIT_TREE,
             GITHUB_REQUEST, GITHUB_REQUEST_ENTRY, GITHUB_RESPONSE,
