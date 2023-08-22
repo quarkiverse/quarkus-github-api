@@ -130,6 +130,8 @@ final class GitHubApiDotNames {
     private static final DotName GH_COMMIT_BUILDER_USER_INFO = DotName
             .createSimple("org.kohsuke.github.GHCommitBuilder$UserInfo");
     private static final DotName GH_COMMIT_FILE = DotName.createSimple(GHCommit.File.class.getName());
+    private static final DotName GH_COMMIT_FILES_PAGE = DotName
+            .createSimple("org.kohsuke.github.GHCommitFilesPage");
     private static final DotName GH_COMMIT_PARENT = DotName.createSimple(GHCommit.Parent.class.getName());
     private static final DotName GH_COMMIT_SHORT_INFO = DotName.createSimple(GHCommit.ShortInfo.class.getName());
     private static final DotName GH_COMMIT_STATS = DotName.createSimple(GHCommit.Stats.class.getName());
@@ -227,6 +229,8 @@ final class GitHubApiDotNames {
     private static final DotName GH_TAG_OBJECT = DotName.createSimple(GHTagObject.class.getName());
     private static final DotName GH_THREAD_SUBJECT = DotName.createSimple(GHThread.class.getName() + "$Subject");
     private static final DotName GH_TREE = DotName.createSimple(GHTree.class.getName());
+    private static final DotName GH_TREE_BUILDER_DELETE_TREE_ENTRY = DotName
+            .createSimple("org.kohsuke.github.GHTreeBuilder$DeleteTreeEntry");
     private static final DotName GH_TREE_BUILDER_TREE_ENTRY = DotName
             .createSimple("org.kohsuke.github.GHTreeBuilder$TreeEntry");
     private static final DotName GH_TREE_ENTRY = DotName.createSimple(GHTreeEntry.class.getName());
@@ -259,7 +263,7 @@ final class GitHubApiDotNames {
             GH_CHECK_RUN_BUILDER_OUTPUT,
             GH_CHECK_RUN_OUTPUT, GH_CHECK_RUNS_PAGE, GH_CHECK_SUITE_HEAD_COMMIT,
             GH_CODEOWNERS_ERROR, GH_COMMIT_BUILDER_USER_INFO,
-            GH_COMMIT_FILE, GH_COMMIT_PARENT, GH_COMMIT_SHORT_INFO,
+            GH_COMMIT_FILE, GH_COMMIT_FILES_PAGE, GH_COMMIT_PARENT, GH_COMMIT_SHORT_INFO,
             GH_COMMIT_STATS, GH_COMMIT_USER,
             GH_COMMIT_POINTER, GH_COMPARE, GH_COMPARE_INNER_COMMIT, GH_COMPARE_TREE, GH_CONTENT_UPDATE_RESPONSE,
             GH_DEPLOY_KEY,
@@ -286,7 +290,8 @@ final class GitHubApiDotNames {
             GH_REPOSITORY_STATISTICS, GH_REPOSITORY_STATISTICS_CONTRIBUTOR_STATS_WEEK, GH_REPOSITORY_STATISTICS_CODE_FREQUENCY,
             GH_REPOSITORY_STATISTICS_PUNCH_CARD_ITEM, GH_REPOSITORY_VARIABLE, GH_STARGAZER, GH_SUBSCRIPTION, GH_TAG,
             GH_TAG_OBJECT,
-            GH_THREAD_SUBJECT, GH_TREE, GH_TREE_BUILDER_TREE_ENTRY, GH_TREE_ENTRY, GH_VERIFICATION,
+            GH_THREAD_SUBJECT, GH_TREE, GH_TREE_BUILDER_DELETE_TREE_ENTRY, GH_TREE_BUILDER_TREE_ENTRY, GH_TREE_ENTRY,
+            GH_VERIFICATION,
             GH_WORKFLOW_JOB_STEP, GH_WORKFLOW_JOBS_PAGE, GH_WORKFLOW_RUN_HEAD_COMMIT, GH_WORKFLOW_RUNS_PAGE, GH_WORKFLOWS_PAGE,
             GIT_COMMIT, GIT_COMMIT_TREE,
             GITHUB_REQUEST, GITHUB_REQUEST_ENTRY, GITHUB_RESPONSE,
