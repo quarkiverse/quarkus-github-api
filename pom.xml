@@ -25,7 +25,7 @@
         <resource-plugin.version>3.3.1</resource-plugin.version>
         <surefire-plugin.version>3.2.2</surefire-plugin.version>
 
-        <github-api.version>1.317</github-api.version>
+        <github-api.version>1.318</github-api.version>
         <assertj.version>3.24.2</assertj.version>
     </properties>
 
