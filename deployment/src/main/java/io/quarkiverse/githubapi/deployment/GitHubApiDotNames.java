@@ -104,12 +104,26 @@ final class GitHubApiDotNames {
     private static final DotName GH_BRANCH = DotName.createSimple(GHBranch.class.getName());
     private static final DotName GH_BRANCH_COMMIT = DotName.createSimple(GHBranch.Commit.class.getName());
     private static final DotName GH_BRANCH_PROTECTION = DotName.createSimple(GHBranchProtection.class.getName());
+    private static final DotName GH_BRANCH_PROTECTION_ALLOW_DELETIONS = DotName
+            .createSimple(GHBranchProtection.AllowDeletions.class.getName());
+    private static final DotName GH_BRANCH_PROTECTION_ALLOW_FORCE_PUSHES = DotName
+            .createSimple(GHBranchProtection.AllowForcePushes.class.getName());
+    private static final DotName GH_BRANCH_PROTECTION_ALLOW_FORK_SYNCING = DotName
+            .createSimple(GHBranchProtection.AllowForkSyncing.class.getName());
+    private static final DotName GH_BRANCH_PROTECTION_BLOCK_CREATIONS = DotName
+            .createSimple(GHBranchProtection.BlockCreations.class.getName());
     private static final DotName GH_BRANCH_PROTECTION_BUILDER_RESTRICTIONS = DotName
             .createSimple("org.kohsuke.github.GHBranchProtectionBuilder$Restrictions");
     private static final DotName GH_BRANCH_PROTECTION_BUILDER_STATUS_CHECKS = DotName
             .createSimple("org.kohsuke.github.GHBranchProtectionBuilder$StatusChecks");
     private static final DotName GH_BRANCH_PROTECTION_ENFORCE_ADMINS = DotName
             .createSimple(GHBranchProtection.EnforceAdmins.class.getName());
+    private static final DotName GH_BRANCH_PROTECTION_LOCK_BRANCH = DotName
+            .createSimple(GHBranchProtection.LockBranch.class.getName());
+    private static final DotName GH_BRANCH_PROTECTION_REQUIRED_CONVERSATION_RESOLUTION = DotName
+            .createSimple(GHBranchProtection.RequiredConversationResolution.class.getName());
+    private static final DotName GH_BRANCH_PROTECTION_REQUIRED_LINEAR_HISTORY = DotName
+            .createSimple(GHBranchProtection.RequiredLinearHistory.class.getName());
     private static final DotName GH_BRANCH_PROTECTION_REQUIRED_REVIEWS = DotName
             .createSimple(GHBranchProtection.RequiredReviews.class.getName());
     private static final DotName GH_BRANCH_PROTECTION_REQUIRED_SIGNATURES = DotName
@@ -245,6 +259,8 @@ final class GitHubApiDotNames {
     private static final DotName GITHUB_REQUEST = DotName.createSimple("org.kohsuke.github.GitHubRequest");
     private static final DotName GITHUB_REQUEST_ENTRY = DotName.createSimple("org.kohsuke.github.GitHubRequest$Entry");
     private static final DotName GITHUB_RESPONSE = DotName.createSimple("org.kohsuke.github.GitHubResponse");
+    private static final DotName GITHUB_SANITY_CACHED_VALUE = DotName
+            .createSimple("org.kohsuke.github.GitHubSanityCachedValue");
     private static final DotName JSON_RATE_LIMIT = DotName.createSimple("org.kohsuke.github.JsonRateLimit");
 
     static final List<DotName> GH_SIMPLE_OBJECTS = Arrays.asList(
@@ -254,9 +270,15 @@ final class GitHubApiDotNames {
             GH_APP_INSTALLATION_TOKEN, GH_APP_AUTHORIZATION_APP, GH_ARTIFACTS_PAGE,
             GH_AUTHENTICATED_APP_INSTALLATION, GH_BLOB,
             GH_BRANCH,
-            GH_BRANCH_COMMIT, GH_BRANCH_PROTECTION, GH_BRANCH_PROTECTION_BUILDER_RESTRICTIONS,
+            GH_BRANCH_COMMIT, GH_BRANCH_PROTECTION, GH_BRANCH_PROTECTION_ALLOW_DELETIONS,
+            GH_BRANCH_PROTECTION_ALLOW_FORCE_PUSHES, GH_BRANCH_PROTECTION_ALLOW_FORK_SYNCING,
+            GH_BRANCH_PROTECTION_BLOCK_CREATIONS,
+            GH_BRANCH_PROTECTION_BUILDER_RESTRICTIONS,
             GH_BRANCH_PROTECTION_BUILDER_STATUS_CHECKS,
-            GH_BRANCH_PROTECTION_ENFORCE_ADMINS, GH_BRANCH_PROTECTION_REQUIRED_REVIEWS,
+            GH_BRANCH_PROTECTION_ENFORCE_ADMINS,
+            GH_BRANCH_PROTECTION_LOCK_BRANCH, GH_BRANCH_PROTECTION_REQUIRED_CONVERSATION_RESOLUTION,
+            GH_BRANCH_PROTECTION_REQUIRED_LINEAR_HISTORY,
+            GH_BRANCH_PROTECTION_REQUIRED_REVIEWS,
             GH_BRANCH_PROTECTION_REQUIRED_SIGNATURES, GH_BRANCH_PROTECTION_REQUIRED_STATUS_CHECKS,
             GH_BRANCH_PROTECTION_RESTRICTIONS,
             GH_CHECK_RUN_BUILDER_ACTION, GH_CHECK_RUN_BUILDER_ANNOTATION, GH_CHECK_RUN_BUILDER_IMAGE,
@@ -294,7 +316,7 @@ final class GitHubApiDotNames {
             GH_VERIFICATION,
             GH_WORKFLOW_JOB_STEP, GH_WORKFLOW_JOBS_PAGE, GH_WORKFLOW_RUN_HEAD_COMMIT, GH_WORKFLOW_RUNS_PAGE, GH_WORKFLOWS_PAGE,
             GIT_COMMIT, GIT_COMMIT_TREE,
-            GITHUB_REQUEST, GITHUB_REQUEST_ENTRY, GITHUB_RESPONSE,
+            GITHUB_REQUEST, GITHUB_REQUEST_ENTRY, GITHUB_RESPONSE, GITHUB_SANITY_CACHED_VALUE,
             JSON_RATE_LIMIT);
 
     private GitHubApiDotNames() {
