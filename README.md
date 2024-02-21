@@ -1,6 +1,6 @@
 # Quarkus GitHub API
 
-[![Version](https://img.shields.io/maven-central/v/io.quarkiverse.githubapi/quarkus-github-api?logo=apache-maven&style=for-the-badge)](https://search.maven.org/artifact/io.quarkiverse.githubapi/quarkus-github-api)
+[![Version](https://img.shields.io/maven-central/v/io.quarkiverse.githubapi/quarkus-github-api?logo=apache-maven&style=for-the-badge)](https://central.sonatype.com/artifact/io.quarkiverse.githubapi/quarkus-github-api)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=for-the-badge)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
