@@ -38,6 +38,7 @@ import org.kohsuke.github.GHMarketplacePendingChange;
 import org.kohsuke.github.GHMarketplacePlan;
 import org.kohsuke.github.GHMarketplacePurchase;
 import org.kohsuke.github.GHMarketplaceUserPurchase;
+import org.kohsuke.github.GHMemberChanges;
 import org.kohsuke.github.GHMembership;
 import org.kohsuke.github.GHMeta;
 import org.kohsuke.github.GHNotificationStream;
@@ -60,6 +61,7 @@ import org.kohsuke.github.GHStargazer;
 import org.kohsuke.github.GHSubscription;
 import org.kohsuke.github.GHTag;
 import org.kohsuke.github.GHTagObject;
+import org.kohsuke.github.GHTeamChanges;
 import org.kohsuke.github.GHThread;
 import org.kohsuke.github.GHTree;
 import org.kohsuke.github.GHTreeEntry;
@@ -164,6 +166,8 @@ final class GitHubApiDotNames {
             .createSimple(GHEventPayload.CommentChanges.class.getName());
     private static final DotName GH_EVENT_PAYLOAD_COMMENT_CHANGES_GH_FROM = DotName
             .createSimple(GHEventPayload.CommentChanges.GHFrom.class.getName());
+    private static final DotName GH_EVENT_PAYLOAD_INSTALLATION_REPOSITORY = DotName
+            .createSimple(GHEventPayload.Installation.Repository.class.getName());
     private static final DotName GH_EVENT_PAYLOAD_PUSH_PUSHER = DotName
             .createSimple(GHEventPayload.Push.Pusher.class.getName());
     private static final DotName GH_EVENT_PAYLOAD_PUSH_PUSH_COMMIT = DotName
@@ -183,6 +187,9 @@ final class GitHubApiDotNames {
     private static final DotName GH_MARKETPLACE_PLAN = DotName.createSimple(GHMarketplacePlan.class.getName());
     private static final DotName GH_MARKETPLACE_PURCHASE = DotName.createSimple(GHMarketplacePurchase.class.getName());
     private static final DotName GH_MARKETPLACE_USER_PURCHASE = DotName.createSimple(GHMarketplaceUserPurchase.class.getName());
+    private static final DotName GH_MEMBER_CHANGES = DotName.createSimple(GHMemberChanges.class.getName());
+    private static final DotName GH_MEMBER_CHANGES_FROM_TO_PERMISSION = DotName
+            .createSimple(GHMemberChanges.FromToPermission.class.getName());
     private static final DotName GH_MEMBERSHIP = DotName.createSimple(GHMembership.class.getName());
     private static final DotName GH_META = DotName.createSimple(GHMeta.class.getName());
     private static final DotName GH_NOTIFICATION_STREAM = DotName.createSimple(GHNotificationStream.class.getName());
@@ -241,6 +248,13 @@ final class GitHubApiDotNames {
     private static final DotName GH_SUBSCRIPTION = DotName.createSimple(GHSubscription.class.getName());
     private static final DotName GH_TAG = DotName.createSimple(GHTag.class.getName());
     private static final DotName GH_TAG_OBJECT = DotName.createSimple(GHTagObject.class.getName());
+    private static final DotName GH_TEAM_CHANGES = DotName.createSimple(GHTeamChanges.class.getName());
+    private static final DotName GH_TEAM_CHANGES_FROM_PRIVACY = DotName.createSimple(GHTeamChanges.FromPrivacy.class.getName());
+    private static final DotName GH_TEAM_CHANGES_FROM_REPOSITORY = DotName
+            .createSimple(GHTeamChanges.FromRepository.class.getName());
+    private static final DotName GH_TEAM_CHANGES_FROM_REPOSITORY_PERMISSIONS = DotName
+            .createSimple(GHTeamChanges.FromRepositoryPermissions.class.getName());
+    private static final DotName GH_TEAM_CHANGES_FROM_STRING = DotName.createSimple(GHTeamChanges.FromString.class.getName());
     private static final DotName GH_THREAD_SUBJECT = DotName.createSimple(GHThread.class.getName() + "$Subject");
     private static final DotName GH_TREE = DotName.createSimple(GHTree.class.getName());
     private static final DotName GH_TREE_BUILDER_DELETE_TREE_ENTRY = DotName
@@ -291,12 +305,15 @@ final class GitHubApiDotNames {
             GH_DEPLOY_KEY,
             GH_EMAIL, GH_EVENT_INFO, GH_EVENT_INFO_GH_EVENT_REPOSITORY,
             GH_EVENT_PAYLOAD_COMMENT_CHANGES, GH_EVENT_PAYLOAD_COMMENT_CHANGES_GH_FROM,
+            GH_EVENT_PAYLOAD_INSTALLATION_REPOSITORY,
             GH_EVENT_PAYLOAD_PUSH_PUSHER, GH_EVENT_PAYLOAD_PUSH_PUSH_COMMIT,
             GH_GIST_FILE, GH_ISSUE_CHANGES, GH_ISSUE_CHANGES_GH_FROM,
             GH_ISSUE_RENAME, GH_ISSUE_PULL_REQUEST, GH_ISSUE_EVENT,
             GH_LABEL, GH_LABEL_CHANGES, GH_LABEL_CHANGES_GH_FROM,
             GH_MARKETPLACE_PENDING_CHANGE, GH_MARKETPLACE_PLAN,
-            GH_MARKETPLACE_PURCHASE, GH_MARKETPLACE_USER_PURCHASE, GH_MEMBERSHIP, GH_META, GH_NOTIFICATION_STREAM,
+            GH_MARKETPLACE_PURCHASE, GH_MARKETPLACE_USER_PURCHASE, GH_MEMBERSHIP,
+            GH_MEMBER_CHANGES, GH_MEMBER_CHANGES_FROM_TO_PERMISSION,
+            GH_META, GH_NOTIFICATION_STREAM,
             GH_ORG_HOOK, GH_ORGANIZATION_REPOSITORY_ROLE, GH_PERMISSION,
             GH_PROJECTS_V2_ITEM_CHANGES, GH_PROJECTS_V2_ITEM_CHANGES_FIELD_VALUE, GH_PROJECTS_V2_ITEM_CHANGES_FROM_TO,
             GH_PROJECTS_V2_ITEM_CHANGES_FROM_TO_DATE,
@@ -312,6 +329,8 @@ final class GitHubApiDotNames {
             GH_REPOSITORY_STATISTICS, GH_REPOSITORY_STATISTICS_CONTRIBUTOR_STATS_WEEK, GH_REPOSITORY_STATISTICS_CODE_FREQUENCY,
             GH_REPOSITORY_STATISTICS_PUNCH_CARD_ITEM, GH_REPOSITORY_VARIABLE, GH_STARGAZER, GH_SUBSCRIPTION, GH_TAG,
             GH_TAG_OBJECT,
+            GH_TEAM_CHANGES, GH_TEAM_CHANGES_FROM_PRIVACY, GH_TEAM_CHANGES_FROM_REPOSITORY,
+            GH_TEAM_CHANGES_FROM_REPOSITORY_PERMISSIONS, GH_TEAM_CHANGES_FROM_STRING,
             GH_THREAD_SUBJECT, GH_TREE, GH_TREE_BUILDER_DELETE_TREE_ENTRY, GH_TREE_BUILDER_TREE_ENTRY, GH_TREE_ENTRY,
             GH_VERIFICATION,
             GH_WORKFLOW_JOB_STEP, GH_WORKFLOW_JOBS_PAGE, GH_WORKFLOW_RUN_HEAD_COMMIT, GH_WORKFLOW_RUNS_PAGE, GH_WORKFLOWS_PAGE,
