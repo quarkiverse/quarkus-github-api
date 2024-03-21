@@ -190,6 +190,8 @@ final class GitHubApiDotNames {
     private static final DotName GH_MEMBER_CHANGES = DotName.createSimple(GHMemberChanges.class.getName());
     private static final DotName GH_MEMBER_CHANGES_FROM_TO_PERMISSION = DotName
             .createSimple(GHMemberChanges.FromToPermission.class.getName());
+    private static final DotName GH_MEMBER_CHANGES_FROM_ROLE_NAME = DotName
+            .createSimple(GHMemberChanges.FromRoleName.class.getName());
     private static final DotName GH_MEMBERSHIP = DotName.createSimple(GHMembership.class.getName());
     private static final DotName GH_META = DotName.createSimple(GHMeta.class.getName());
     private static final DotName GH_NOTIFICATION_STREAM = DotName.createSimple(GHNotificationStream.class.getName());
@@ -312,7 +314,7 @@ final class GitHubApiDotNames {
             GH_LABEL, GH_LABEL_CHANGES, GH_LABEL_CHANGES_GH_FROM,
             GH_MARKETPLACE_PENDING_CHANGE, GH_MARKETPLACE_PLAN,
             GH_MARKETPLACE_PURCHASE, GH_MARKETPLACE_USER_PURCHASE, GH_MEMBERSHIP,
-            GH_MEMBER_CHANGES, GH_MEMBER_CHANGES_FROM_TO_PERMISSION,
+            GH_MEMBER_CHANGES, GH_MEMBER_CHANGES_FROM_TO_PERMISSION, GH_MEMBER_CHANGES_FROM_ROLE_NAME,
             GH_META, GH_NOTIFICATION_STREAM,
             GH_ORG_HOOK, GH_ORGANIZATION_REPOSITORY_ROLE, GH_PERMISSION,
             GH_PROJECTS_V2_ITEM_CHANGES, GH_PROJECTS_V2_ITEM_CHANGES_FIELD_VALUE, GH_PROJECTS_V2_ITEM_CHANGES_FROM_TO,
