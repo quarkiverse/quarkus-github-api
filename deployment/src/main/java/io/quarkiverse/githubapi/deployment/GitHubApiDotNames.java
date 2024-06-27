@@ -22,8 +22,10 @@ import org.kohsuke.github.GHContent;
 import org.kohsuke.github.GHContentUpdateResponse;
 import org.kohsuke.github.GHDeployKey;
 import org.kohsuke.github.GHEmail;
+import org.kohsuke.github.GHError;
 import org.kohsuke.github.GHEventInfo;
 import org.kohsuke.github.GHEventPayload;
+import org.kohsuke.github.GHExternalGroup;
 import org.kohsuke.github.GHGistFile;
 import org.kohsuke.github.GHHook;
 import org.kohsuke.github.GHIssue;
@@ -53,6 +55,7 @@ import org.kohsuke.github.GHPullRequestReviewCommentReactions;
 import org.kohsuke.github.GHRateLimit;
 import org.kohsuke.github.GHRef;
 import org.kohsuke.github.GHRepository;
+import org.kohsuke.github.GHRepositoryChanges;
 import org.kohsuke.github.GHRepositoryDiscussion;
 import org.kohsuke.github.GHRepositoryStatistics;
 import org.kohsuke.github.GHRepositoryTraffic;
@@ -118,6 +121,8 @@ final class GitHubApiDotNames {
             .createSimple("org.kohsuke.github.GHBranchProtectionBuilder$Restrictions");
     private static final DotName GH_BRANCH_PROTECTION_BUILDER_STATUS_CHECKS = DotName
             .createSimple("org.kohsuke.github.GHBranchProtectionBuilder$StatusChecks");
+    private static final DotName GH_BRANCH_PROTECTION_CHECK = DotName
+            .createSimple(GHBranchProtection.Check.class.getName());
     private static final DotName GH_BRANCH_PROTECTION_ENFORCE_ADMINS = DotName
             .createSimple(GHBranchProtection.EnforceAdmins.class.getName());
     private static final DotName GH_BRANCH_PROTECTION_LOCK_BRANCH = DotName
@@ -159,6 +164,7 @@ final class GitHubApiDotNames {
     private static final DotName GH_CONTENT_UPDATE_RESPONSE = DotName.createSimple(GHContentUpdateResponse.class.getName());
     private static final DotName GH_DEPLOY_KEY = DotName.createSimple(GHDeployKey.class.getName());
     private static final DotName GH_EMAIL = DotName.createSimple(GHEmail.class.getName());
+    private static final DotName GH_ERROR = DotName.createSimple(GHError.class.getName());
     private static final DotName GH_EVENT_INFO = DotName.createSimple(GHEventInfo.class.getName());
     private static final DotName GH_EVENT_INFO_GH_EVENT_REPOSITORY = DotName
             .createSimple(GHEventInfo.GHEventRepository.class.getName());
@@ -172,6 +178,12 @@ final class GitHubApiDotNames {
             .createSimple(GHEventPayload.Push.Pusher.class.getName());
     private static final DotName GH_EVENT_PAYLOAD_PUSH_PUSH_COMMIT = DotName
             .createSimple(GHEventPayload.Push.PushCommit.class.getName());
+    private static final DotName GH_EXTERNAL_GROUP = DotName.createSimple(GHExternalGroup.class.getName());
+    private static final DotName GH_EXTERNAL_GROUP_GH_LINKED_EXTERNAL_MEMBER = DotName
+            .createSimple(GHExternalGroup.GHLinkedExternalMember.class.getName());
+    private static final DotName GH_EXTERNAL_GROUP_GH_LINKED_TEAM = DotName
+            .createSimple(GHExternalGroup.GHLinkedTeam.class.getName());
+    private static final DotName GH_EXTERNAL_GROUP_PAGE = DotName.createSimple("org.kohsuke.github.GHExternalGroupPage");
     private static final DotName GH_GIST_FILE = DotName.createSimple(GHGistFile.class.getName());
     private static final DotName GH_ISSUE_CHANGES = DotName.createSimple(GHIssueChanges.class.getName());
     private static final DotName GH_ISSUE_CHANGES_GH_FROM = DotName
@@ -231,6 +243,14 @@ final class GitHubApiDotNames {
             .createSimple(GHRateLimit.UnknownLimitRecord.class.getName());
     private static final DotName GH_REF = DotName.createSimple(GHRef.class.getName());
     private static final DotName GH_REF_GH_OBJECT = DotName.createSimple(GHRef.GHObject.class.getName());
+    private static final DotName GH_REPOSITORY_CHANGES = DotName.createSimple(GHRepositoryChanges.class.getName());
+    private static final DotName GH_REPOSITORY_CHANGES_FROM_NAME = DotName
+            .createSimple(GHRepositoryChanges.FromName.class.getName());
+    private static final DotName GH_REPOSITORY_CHANGES_FROM_OWNER = DotName
+            .createSimple(GHRepositoryChanges.FromOwner.class.getName());
+    private static final DotName GH_REPOSITORY_CHANGES_FROM_REPOSITORY = DotName
+            .createSimple(GHRepositoryChanges.FromRepository.class.getName());
+    private static final DotName GH_REPOSITORY_CHANGES_OWNER = DotName.createSimple(GHRepositoryChanges.Owner.class.getName());
     private static final DotName GH_REPOSITORY_DISCUSSION_CATEGORY = DotName
             .createSimple(GHRepositoryDiscussion.Category.class.getName());
     private static final DotName GH_REPOSITORY_GH_CODEOWNERS_ERRORS = DotName
@@ -291,6 +311,7 @@ final class GitHubApiDotNames {
             GH_BRANCH_PROTECTION_BLOCK_CREATIONS,
             GH_BRANCH_PROTECTION_BUILDER_RESTRICTIONS,
             GH_BRANCH_PROTECTION_BUILDER_STATUS_CHECKS,
+            GH_BRANCH_PROTECTION_CHECK,
             GH_BRANCH_PROTECTION_ENFORCE_ADMINS,
             GH_BRANCH_PROTECTION_LOCK_BRANCH, GH_BRANCH_PROTECTION_REQUIRED_CONVERSATION_RESOLUTION,
             GH_BRANCH_PROTECTION_REQUIRED_LINEAR_HISTORY,
@@ -305,10 +326,12 @@ final class GitHubApiDotNames {
             GH_COMMIT_STATS, GH_COMMIT_USER,
             GH_COMMIT_POINTER, GH_COMPARE, GH_COMPARE_INNER_COMMIT, GH_COMPARE_TREE, GH_CONTENT_UPDATE_RESPONSE,
             GH_DEPLOY_KEY,
-            GH_EMAIL, GH_EVENT_INFO, GH_EVENT_INFO_GH_EVENT_REPOSITORY,
+            GH_EMAIL, GH_ERROR, GH_EVENT_INFO, GH_EVENT_INFO_GH_EVENT_REPOSITORY,
             GH_EVENT_PAYLOAD_COMMENT_CHANGES, GH_EVENT_PAYLOAD_COMMENT_CHANGES_GH_FROM,
             GH_EVENT_PAYLOAD_INSTALLATION_REPOSITORY,
             GH_EVENT_PAYLOAD_PUSH_PUSHER, GH_EVENT_PAYLOAD_PUSH_PUSH_COMMIT,
+            GH_EXTERNAL_GROUP, GH_EXTERNAL_GROUP_GH_LINKED_EXTERNAL_MEMBER,
+            GH_EXTERNAL_GROUP_GH_LINKED_TEAM, GH_EXTERNAL_GROUP_PAGE,
             GH_GIST_FILE, GH_ISSUE_CHANGES, GH_ISSUE_CHANGES_GH_FROM,
             GH_ISSUE_RENAME, GH_ISSUE_PULL_REQUEST, GH_ISSUE_EVENT,
             GH_LABEL, GH_LABEL_CHANGES, GH_LABEL_CHANGES_GH_FROM,
@@ -326,7 +349,10 @@ final class GitHubApiDotNames {
             GH_PULL_REQUEST_FILE_DETAIL, GH_PULL_REQUEST_REVIEW_BUILDER_DRAFT_REVIEW_COMMENT,
             GH_PULL_REQUEST_REVIEW_COMMENT_REACTIONS,
             GH_RATE_LIMIT, GH_RATE_LIMIT_RECORD, GH_RATE_LIMIT_UNKNOWN_LIMIT_RECORD, GH_REF,
-            GH_REF_GH_OBJECT, GH_REPOSITORY_DISCUSSION_CATEGORY, GH_REPOSITORY_GH_CODEOWNERS_ERRORS,
+            GH_REF_GH_OBJECT,
+            GH_REPOSITORY_CHANGES, GH_REPOSITORY_CHANGES_FROM_NAME, GH_REPOSITORY_CHANGES_FROM_OWNER,
+            GH_REPOSITORY_CHANGES_FROM_REPOSITORY, GH_REPOSITORY_CHANGES_OWNER,
+            GH_REPOSITORY_DISCUSSION_CATEGORY, GH_REPOSITORY_GH_CODEOWNERS_ERRORS,
             GH_REPOSITORY_GH_REPO_PERMISSION, GH_REPOSITORY_TOPICS,
             GH_REPOSITORY_STATISTICS, GH_REPOSITORY_STATISTICS_CONTRIBUTOR_STATS_WEEK, GH_REPOSITORY_STATISTICS_CODE_FREQUENCY,
             GH_REPOSITORY_STATISTICS_PUNCH_CARD_ITEM, GH_REPOSITORY_VARIABLE, GH_STARGAZER, GH_SUBSCRIPTION, GH_TAG,
