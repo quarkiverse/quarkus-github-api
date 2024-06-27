@@ -68,7 +68,8 @@ class GitHubApiDotNamesTest {
             "org.kohsuke.github.extras.authorization",
             "org.kohsuke.github.extras.okhttp3",
             "org.kohsuke.github.function",
-            "org.kohsuke.github.internal");
+            "org.kohsuke.github.internal",
+            "org.kohsuke.github.EnterpriseManagedSupport");
 
     private static Index ghApiIndex;
 
