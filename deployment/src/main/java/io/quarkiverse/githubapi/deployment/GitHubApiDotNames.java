@@ -74,6 +74,7 @@ import org.kohsuke.github.GHWorkflowJob;
 import org.kohsuke.github.GHWorkflowRun;
 import org.kohsuke.github.GitCommit;
 import org.kohsuke.github.GitUser;
+import org.kohsuke.github.internal.graphql.response.GHGraphQLResponse;
 
 final class GitHubApiDotNames {
 
@@ -98,7 +99,6 @@ final class GitHubApiDotNames {
 
     static final String[] GH_SIMPLE_OBJECTS = new String[] {
             "org.kohsuke.github.GitHubInteractiveObject",
-            GHAppInstallation.class.getName() + "$GHAppInstallationRepositoryResult",
             GHAppInstallation.class.getName() + "$GHAppInstallationRepositoryResult",
             "org.kohsuke.github.GHAppInstallationsPage",
             GHAppInstallationToken.class.getName(),
@@ -134,6 +134,9 @@ final class GitHubApiDotNames {
             GHCheckSuite.HeadCommit.class.getName(),
             GHCodeownersError.class.getName(),
             "org.kohsuke.github.GHCommitBuilder$UserInfo",
+            "org.kohsuke.github.GHContentBuilder$UserInfo",
+            "org.kohsuke.github.GHContentDeleter$UserInfo",
+            "org.kohsuke.github.GHContentUpdater$UserInfo",
             GHCommit.File.class.getName(),
             "org.kohsuke.github.GHCommitFilesPage",
             GHCommit.Parent.class.getName(),
@@ -160,6 +163,9 @@ final class GitHubApiDotNames {
             GHExternalGroup.GHLinkedTeam.class.getName(),
             "org.kohsuke.github.GHExternalGroupPage",
             GHGistFile.class.getName(),
+            GHGraphQLResponse.class.getName(),
+            "org.kohsuke.github.internal.graphql.response.GHGraphQLResponse$GraphQLError",
+            GHGraphQLResponse.ObjectResponse.class.getName(),
             GHIssueChanges.class.getName(),
             GHIssueChanges.GHFrom.class.getName(),
             GHIssueRename.class.getName(),
@@ -201,6 +207,12 @@ final class GitHubApiDotNames {
             GHRateLimit.UnknownLimitRecord.class.getName(),
             GHRef.class.getName(),
             GHRef.GHObject.class.getName(),
+            "org.kohsuke.github.GHSBOM",
+            "org.kohsuke.github.GHSBOM$CreationInfo",
+            "org.kohsuke.github.GHSBOM$ExternalRef",
+            "org.kohsuke.github.GHSBOM$Package",
+            "org.kohsuke.github.GHSBOM$Relationship",
+            "org.kohsuke.github.GHSBOMExportResult",
             GHRepositoryChanges.class.getName(),
             GHRepositoryChanges.FromName.class.getName(),
             GHRepositoryChanges.FromOwner.class.getName(),
@@ -237,6 +249,10 @@ final class GitHubApiDotNames {
             "org.kohsuke.github.GHWorkflowsPage",
             GitCommit.class.getName(),
             GitCommit.class.getName() + "$Tree",
+            "org.kohsuke.github.GitHubBridgeAdapterObject",
+            GHGraphQLResponse.class.getName(),
+            GHGraphQLResponse.class.getName() + "$GraphQLError",
+            GHGraphQLResponse.ObjectResponse.class.getName(),
             "org.kohsuke.github.GitHubRequest",
             "org.kohsuke.github.GitHubRequest$Entry",
             "org.kohsuke.github.GitHubResponse",
