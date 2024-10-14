@@ -12,7 +12,7 @@
     <name>Quarkus - GitHub API - Documentation</name>
     
     <properties>
-        <asciidoctorj.version>2.5.13</asciidoctorj.version>
+        <asciidoctorj.version>3.0.0</asciidoctorj.version>
         <asciidoctor-maven-plugin.version>3.0.0</asciidoctor-maven-plugin.version>
     </properties>
 
