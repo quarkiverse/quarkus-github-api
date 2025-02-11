@@ -39,16 +39,16 @@ class GithubApiProcessor {
     void registerForReflection(CombinedIndexBuildItem combinedIndex,
             BuildProducer<ReflectiveClassBuildItem> reflectiveClasses) {
         for (DotName rootModelObject : GH_ROOT_OBJECTS) {
-            reflectiveClasses.produce(new ReflectiveClassBuildItem(true, true, rootModelObject.toString()));
+            reflectiveClasses.produce(ReflectiveClassBuildItem.builder(rootModelObject.toString()).methods().fields().build());
 
-            reflectiveClasses.produce(new ReflectiveClassBuildItem(true, true,
+            reflectiveClasses.produce(ReflectiveClassBuildItem.builder(
                     combinedIndex.getIndex().getAllKnownSubclasses(rootModelObject).stream()
                             .map(ci -> ci.name().toString())
-                            .toArray(String[]::new)));
+                            .toArray(String[]::new))
+                    .methods().fields().build());
         }
 
-        reflectiveClasses.produce(new ReflectiveClassBuildItem(true, true,
-                GH_SIMPLE_OBJECTS.stream().map(DotName::toString).toArray(String[]::new)));
+        reflectiveClasses.produce(ReflectiveClassBuildItem.builder(GH_SIMPLE_OBJECTS).methods().fields().build());
     }
 
     @BuildStep
