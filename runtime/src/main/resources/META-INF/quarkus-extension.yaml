@@ -5,7 +5,7 @@ metadata:
   - "github"
   - "github-api"
   - "github api"
-  guide: "https://github-api.kohsuke.org/"
+  guide: "https://hub4j.github.io/github-api/"
   categories:
     - "business-automation"
   status: "stable"
