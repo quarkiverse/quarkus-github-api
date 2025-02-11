@@ -7,6 +7,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
@@ -52,6 +53,7 @@ class GitHubApiDotNamesTest {
             "org.kohsuke.github.GitHubPageIterator",
             "org.kohsuke.github.GitHubRateLimitChecker",
             "org.kohsuke.github.GitHubRateLimitHandler",
+            "org.kohsuke.github.GitHubRequestBuilderDone",
             "org.kohsuke.github.HttpConnector",
             "org.kohsuke.github.HttpException",
             "org.kohsuke.github.PagedIterator",
@@ -80,25 +82,25 @@ class GitHubApiDotNamesTest {
 
     @Test
     public void testNoMissingGitHubClasses() {
-        Set<DotName> expectedClasses = new TreeSet<>();
+        Set<String> expectedClasses = new TreeSet<>();
         for (ClassInfo clazz : ghApiIndex.getKnownClasses()) {
             if (shouldBeRegisteredForReflection(clazz)) {
-                expectedClasses.add(clazz.name());
+                expectedClasses.add(clazz.name().toString());
             }
         }
 
         // Simulate what happens when we create build items to register classes for reflection
-        Set<DotName> actualClasses = new TreeSet<>();
-        actualClasses.addAll(GitHubApiDotNames.GH_SIMPLE_OBJECTS);
+        Set<String> actualClasses = new TreeSet<>();
+        actualClasses.addAll(Arrays.asList(GitHubApiDotNames.GH_SIMPLE_OBJECTS));
         for (DotName clazz : GitHubApiDotNames.GH_ROOT_OBJECTS) {
-            actualClasses.add(clazz);
+            actualClasses.add(clazz.toString());
             actualClasses.addAll(ghApiIndex.getAllKnownSubclasses(clazz).stream()
-                    .map(ClassInfo::name).collect(Collectors.toList()));
+                    .map(ClassInfo::name).map(DotName::toString).collect(Collectors.toList()));
         }
 
         // No idea why this appears in the result, since the class doesn't event exist;
         // that's probably a bug in Jandex?
-        actualClasses.remove(DotName.createSimple("org.kohsuke.github.GHCommit$ShortInfo$Tree"));
+        actualClasses.remove("org.kohsuke.github.GHCommit$ShortInfo$Tree");
 
         assertThat(expectedClasses).isNotEmpty();
         assertThat(actualClasses).containsExactlyInAnyOrderElementsOf(expectedClasses);
