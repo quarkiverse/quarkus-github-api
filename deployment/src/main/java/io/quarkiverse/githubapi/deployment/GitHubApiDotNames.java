@@ -8,6 +8,7 @@ import org.kohsuke.github.GHAppInstallation;
 import org.kohsuke.github.GHAppInstallationToken;
 import org.kohsuke.github.GHAuthenticatedAppInstallation;
 import org.kohsuke.github.GHAuthorization;
+import org.kohsuke.github.GHAutolink;
 import org.kohsuke.github.GHBlob;
 import org.kohsuke.github.GHBranch;
 import org.kohsuke.github.GHBranchProtection;
@@ -102,6 +103,7 @@ final class GitHubApiDotNames {
             "org.kohsuke.github.GHAppInstallationsPage",
             GHAppInstallationToken.class.getName(),
             GHAuthorization.class.getName() + "$App",
+            GHAutolink.class.getName(),
             "org.kohsuke.github.GHArtifactsPage",
             GHAuthenticatedAppInstallation.class.getName(),
             GHBlob.class.getName(),
