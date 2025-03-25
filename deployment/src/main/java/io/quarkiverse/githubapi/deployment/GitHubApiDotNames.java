@@ -74,6 +74,7 @@ import org.kohsuke.github.GHWorkflowJob;
 import org.kohsuke.github.GHWorkflowRun;
 import org.kohsuke.github.GitCommit;
 import org.kohsuke.github.GitUser;
+import org.kohsuke.github.internal.graphql.response.GHGraphQLResponse;
 
 final class GitHubApiDotNames {
 
@@ -160,6 +161,9 @@ final class GitHubApiDotNames {
             GHExternalGroup.GHLinkedTeam.class.getName(),
             "org.kohsuke.github.GHExternalGroupPage",
             GHGistFile.class.getName(),
+            GHGraphQLResponse.class.getName(),
+            "org.kohsuke.github.internal.graphql.response.GHGraphQLResponse$GraphQLError",
+            GHGraphQLResponse.ObjectResponse.class.getName(),
             GHIssueChanges.class.getName(),
             GHIssueChanges.GHFrom.class.getName(),
             GHIssueRename.class.getName(),
