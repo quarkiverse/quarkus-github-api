@@ -8,6 +8,7 @@ import org.kohsuke.github.GHAppInstallation;
 import org.kohsuke.github.GHAppInstallationToken;
 import org.kohsuke.github.GHAuthenticatedAppInstallation;
 import org.kohsuke.github.GHAuthorization;
+import org.kohsuke.github.GHAutolink;
 import org.kohsuke.github.GHBlob;
 import org.kohsuke.github.GHBranch;
 import org.kohsuke.github.GHBranchProtection;
@@ -73,6 +74,7 @@ import org.kohsuke.github.GHWorkflowJob;
 import org.kohsuke.github.GHWorkflowRun;
 import org.kohsuke.github.GitCommit;
 import org.kohsuke.github.GitUser;
+import org.kohsuke.github.internal.graphql.response.GHGraphQLResponse;
 
 final class GitHubApiDotNames {
 
@@ -102,6 +104,7 @@ final class GitHubApiDotNames {
             "org.kohsuke.github.GHAppInstallationsPage",
             GHAppInstallationToken.class.getName(),
             GHAuthorization.class.getName() + "$App",
+            GHAutolink.class.getName(),
             "org.kohsuke.github.GHArtifactsPage",
             GHAuthenticatedAppInstallation.class.getName(),
             GHBlob.class.getName(),
@@ -158,6 +161,9 @@ final class GitHubApiDotNames {
             GHExternalGroup.GHLinkedTeam.class.getName(),
             "org.kohsuke.github.GHExternalGroupPage",
             GHGistFile.class.getName(),
+            GHGraphQLResponse.class.getName(),
+            "org.kohsuke.github.internal.graphql.response.GHGraphQLResponse$GraphQLError",
+            GHGraphQLResponse.ObjectResponse.class.getName(),
             GHIssueChanges.class.getName(),
             GHIssueChanges.GHFrom.class.getName(),
             GHIssueRename.class.getName(),
