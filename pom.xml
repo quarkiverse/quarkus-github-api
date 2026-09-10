@@ -9,7 +9,7 @@
 
     <groupId>io.quarkiverse.githubapi</groupId>
     <artifactId>quarkus-github-api-parent</artifactId>
-    <version>999-SNAPSHOT</version>
+    <version>2.0.0.CR7</version>
     <name>Quarkus - GitHub API - Parent</name>
 
     <packaging>pom</packaging>
@@ -108,7 +108,7 @@
         <url>https://github.com/quarkiverse/quarkus-github-api</url>
         <connection>scm:git:git@github.com:quarkiverse/quarkus-github-api.git</connection>
         <developerConnection>scm:git:git@github.com:quarkiverse/quarkus-github-api.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>2.0.0.CR7</tag>
     </scm>
 
     <issueManagement>
