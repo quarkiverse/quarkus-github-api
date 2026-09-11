@@ -23,7 +23,7 @@
         <quarkus.version>3.33.0</quarkus.version>
         <compiler-plugin.version>3.15.0</compiler-plugin.version>
         <resource-plugin.version>3.5.0</resource-plugin.version>
-        <surefire-plugin.version>3.5.6</surefire-plugin.version>
+        <surefire-plugin.version>3.6.0</surefire-plugin.version>
 
         <github-api.version>2.0-rc.7</github-api.version>
         <assertj.version>3.27.7</assertj.version>
