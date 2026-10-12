@@ -7,8 +7,11 @@ import org.jboss.jandex.DotName;
 import org.kohsuke.github.connector.GitHubConnector;
 import org.kohsuke.github.extras.HttpClientGitHubConnector;
 
+import io.quarkiverse.githubapi.runtime.GitHubApiRecorder;
 import io.quarkus.deployment.annotations.BuildProducer;
 import io.quarkus.deployment.annotations.BuildStep;
+import io.quarkus.deployment.annotations.ExecutionTime;
+import io.quarkus.deployment.annotations.Record;
 import io.quarkus.deployment.builditem.CombinedIndexBuildItem;
 import io.quarkus.deployment.builditem.ExtensionSslNativeSupportBuildItem;
 import io.quarkus.deployment.builditem.FeatureBuildItem;
@@ -55,5 +58,11 @@ class GithubApiProcessor {
     void runtimeInitialized(BuildProducer<RuntimeInitializedClassBuildItem> runtimeInitializedClasses) {
         runtimeInitializedClasses.produce(new RuntimeInitializedClassBuildItem(HttpClientGitHubConnector.class.getName()));
         runtimeInitializedClasses.produce(new RuntimeInitializedClassBuildItem(GitHubConnector.class.getName()));
+    }
+
+    @BuildStep
+    @Record(ExecutionTime.RUNTIME_INIT)
+    void configureRateLimiting(GitHubApiRecorder recorder) {
+        recorder.configureRateLimiting();
     }
 }
