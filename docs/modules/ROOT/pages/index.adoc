@@ -1,0 +1,27 @@
+= Quarkus GitHub API
+
+:extension-status: stable
+
+Quarkus GitHub API is a Quarkus extension for the https://github.com/hub4j/github-api[Hub4j GitHub API] library.
+
+Its main purpose is to make it possible to build native executables with GraalVM and Mandrel,
+by automatically registering the necessary reflection and runtime initialization.
+
+It also provides additional features such as proactive rate limit throttling.
+
+== Compatibility
+
+This extension is compatible with the Quarkus 3.x and 4.x series and requires Java 17+.
+
+[NOTE]
+====
+Using the OkHttp connector is not supported.
+The extension uses the default JDK 11+ HTTP client and you don't have to configure anything.
+====
+
+== What's included
+
+* Native image support (GraalVM / Mandrel) for the Hub4j GitHub API
+* Proactive throttling to avoid hitting https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api[GitHub's secondary rate limits]
+* Retry configuration for transient failures
+* A utility class (`GitHubApiUtil`) for throttled pagination

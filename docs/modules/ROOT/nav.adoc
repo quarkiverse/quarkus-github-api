@@ -1,2 +1,4 @@
 * xref:index.adoc[Introduction]
-* xref:create-client.adoc[Create Client]
+* xref:create-client.adoc[Creating a GitHub client]
+* xref:rate-limiting.adoc[Rate limiting]
+* xref:configuration-reference.adoc[Configuration reference]

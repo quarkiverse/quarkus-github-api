@@ -1,0 +1,54 @@
+= Rate limiting
+
+GitHub enforces https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api[secondary rate limits] that can throttle or block your application if it makes too many requests in a short period.
+This extension provides two complementary mechanisms to handle them: proactive throttling and retry on failure.
+
+== Proactive throttling
+
+Proactive throttling adds configurable delays between API calls to avoid triggering secondary rate limits in the first place.
+
+It is enabled by default in production and dev mode, and disabled in tests.
+
+=== Using `GitHubApiUtil`
+
+The `io.quarkiverse.githubapi.GitHubApiUtil` class provides convenience methods for throttled operations.
+
+==== Throttled pagination with `toStream()`
+
+When iterating over paginated results, use `toStream()` to automatically add a delay between page fetches:
+
+[source,java]
+----
+import io.quarkiverse.githubapi.GitHubApiUtil;
+import org.kohsuke.github.GHRepository;
+
+List<GHRepository> repos = GitHubApiUtil.toStream(gitHub.getMyself().listRepositories())
+        .filter(r -> !r.isArchived())
+        .toList();
+----
+
+==== Manual throttling
+
+For fine-grained control, call the sleep methods directly:
+
+[source,java]
+----
+import io.quarkiverse.githubapi.GitHubApiUtil;
+
+for (GHIssue issue : issues) {
+    issue.addLabels("triaged");
+    GitHubApiUtil.sleepForWriteThrottling();
+}
+
+for (GHRepository repo : repos) {
+    repo.getReadme();
+    GitHubApiUtil.sleepForReadThrottling();
+}
+----
+
+== Retry on secondary rate limit
+
+When a call is denied due to a secondary rate limit, the underlying Hub4j library automatically retries it.
+You can configure the maximum number of retry attempts via `quarkus.github-api.rate-limit.retry.max-attempts` (defaults to 2).
+
+See the xref:configuration-reference.adoc[Configuration reference] for the full list of configuration properties.

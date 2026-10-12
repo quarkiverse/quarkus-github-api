@@ -1,0 +1,83 @@
+= Creating a GitHub client
+
+The Quarkus GitHub API extension does not provide CDI injection for the GitHub client.
+You create client instances directly using the Hub4j GitHub API's builder methods.
+
+== Adding the dependency
+
+Add the following dependency to your `pom.xml`:
+
+[source,xml,subs=attributes+]
+----
+<dependency>
+    <groupId>io.quarkiverse.githubapi</groupId>
+    <artifactId>quarkus-github-api</artifactId>
+    <version>LATEST</version> <!--1-->
+</dependency>
+----
+<1> Replace `LATEST` with the latest version available on https://central.sonatype.com/artifact/io.quarkiverse.githubapi/quarkus-github-api[Maven Central].
+
+== Authentication methods
+
+The Hub4j GitHub API supports several authentication strategies:
+
+=== Personal access token
+
+[source,java]
+----
+import org.kohsuke.github.GitHub;
+import org.kohsuke.github.GitHubBuilder;
+
+GitHub gitHub = new GitHubBuilder()
+        .withOAuthToken("ghp_your_token")
+        .build();
+----
+
+=== Environment variable / property file
+
+If you set the `GITHUB_OAUTH` environment variable or configure a `~/.github` properties file,
+you can connect without any explicit configuration:
+
+[source,java]
+----
+GitHub gitHub = GitHub.connect();
+----
+
+See the https://github-api.kohsuke.org/[Hub4j GitHub API documentation] for the full list of supported properties.
+
+=== GitHub App (JWT)
+
+[source,java]
+----
+import org.kohsuke.github.GitHub;
+import org.kohsuke.github.GitHubBuilder;
+import org.kohsuke.github.authorization.AuthorizationProvider;
+
+GitHub gitHub = new GitHubBuilder()
+        .withAuthorizationProvider(authorizationProvider)
+        .build();
+----
+
+TIP: If you are developing a GitHub App, consider using the https://docs.quarkiverse.io/quarkus-github-app/dev/index.html[Quarkus GitHub App extension] which provides a higher-level, annotation-driven programming model built on top of this extension. Similarly, if you are developing a GitHub Action, have a look at the https://docs.quarkiverse.io/quarkus-github-action/dev/index.html[Quarkus GitHub Action extension].
+
+== Anonymous access
+
+For public data with lower rate limits:
+
+[source,java]
+----
+GitHub gitHub = GitHub.connectAnonymously();
+----
+
+== Using the client
+
+Once you have a `GitHub` instance, use it to interact with the GitHub API:
+
+[source,java]
+----
+import org.kohsuke.github.GHRepository;
+
+GHRepository repository = gitHub.getRepository("quarkiverse/quarkus-github-api");
+System.out.println(repository.getFullName());
+System.out.println(repository.getDescription());
+----
