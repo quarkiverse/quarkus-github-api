@@ -1,0 +1,4 @@
+= Configuration reference
+
+include::includes/quarkus-github-api.adoc[]
+
