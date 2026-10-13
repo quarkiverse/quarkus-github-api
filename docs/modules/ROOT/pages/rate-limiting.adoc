@@ -46,6 +46,22 @@ for (GHRepository repo : repos) {
 }
 ----
 
+=== Configuration
+
+Throttle delays can be adjusted with the following properties:
+
+[source,properties]
+----
+# Enable/disable throttling (default: true in prod/dev, false in tests)
+quarkus.github-api.rate-limit.throttle.enabled=true
+
+# Delay between page fetches during pagination (default: 200ms)
+quarkus.github-api.rate-limit.throttle.read=0.2s
+
+# Delay between write/delete operations (default: 1s)
+quarkus.github-api.rate-limit.throttle.write=1s
+----
+
 == Retry on secondary rate limit
 
 When a call is denied due to a secondary rate limit, the underlying Hub4j library automatically retries it.
