@@ -1,5 +1,5 @@
 name: quarkiverse-github-api
-title: Quarkiverse GitHub API
+title: GitHub API
 version: dev
 nav:
 - modules/ROOT/nav.adoc
