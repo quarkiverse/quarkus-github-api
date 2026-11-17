@@ -7,5 +7,5 @@ metadata:
   - "github api"
   guide: "https://github-api.kohsuke.org/"
   categories:
-    - "business-automation"
+    - "automation"
   status: "stable"
